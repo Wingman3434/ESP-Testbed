@@ -35,8 +35,19 @@ def handle_client(client):  # Takes client socket as argument.
     clients[client] = name
 
     while True:
-        command = input("Enter Command")
-        broadcast(bytes(command, "utf8"))
+        for tower in range(len(tower_data)):
+            for esp in range(len(tower_data[tower])):
+                command = 'Tower' + str(tower+1) + ' ' + str(esp)
+                print(command)
+                broadcast(bytes(command, "utf8"))
+                done = False
+                while done == False:
+                    if client.recv(BUFSIZ).decode("utf8") == 'Done!':
+                        done == True
+                    else:
+                        done == False
+        # command = input("Enter Command")
+        # broadcast(bytes(command, "utf8"))
         # USER_INPUT = Thread(target=user_input)
         # USER_INPUT.start()
         # client.send(bytes("FOOOORRR LOOOPPPP", "utf8"))
@@ -109,8 +120,6 @@ def import_config(configfile):
 
 def get_tower_info():
     esplog.info('tower IPs and data array started')
-    tower_ips = []
-    tower_data = []
     for header in config:
         if ('tower' in header.lower() and config[header] != None):
             tower_ips.append(config[header]['IP'])
@@ -153,6 +162,8 @@ esplog.addHandler(fh)
 esplog.addHandler(ch)
 
 #Import config and build array
+tower_ips = []
+tower_data = []
 config = import_config('config.yaml')
 get_tower_info()
 

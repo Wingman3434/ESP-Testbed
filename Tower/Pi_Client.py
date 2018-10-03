@@ -117,10 +117,14 @@ def receive():
         try:
             msg = client_socket.recv(BUFSIZ).decode("utf8")
             if msg == 'Name?':
-                client_socket.send(my_name)
+                if platform.system() == 'Windows':
+                    client_socket.send(bytes(my_name, "utf8"))
+                else:
+                    client_socket.send(my_name)
             elif my_name in msg:
                 command = msg.split(' ')
                 temp_flash(command[1], serial_port, flash_location, file_location)
+                client_socket.send('Done!')
                 print (command)
         except OSError:  # Possibly client has left the chat.
             break
