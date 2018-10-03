@@ -3,6 +3,7 @@ from threading import Thread
 import yaml, select, logging, signal, time
 from collections import OrderedDict
 
+# Gets the IP of the device its running on. Mainly used for debugging
 def get_ip():
     s = socket(AF_INET, SOCK_DGRAM)
     try:
@@ -15,8 +16,8 @@ def get_ip():
         s.close()
     return IP
 
+#Sets up handling for incoming clients
 def accept_incoming_connections():
-    """Sets up handling for incoming clients."""
     while True:
         client, client_address = SERVER.accept()
         print("%s:%s has connected." % client_address)
@@ -24,29 +25,30 @@ def accept_incoming_connections():
         addresses[client] = client_address
         Thread(target=handle_client, args=(client,)).start()
 
-
+#Handles a single client connection
 def handle_client(client):  # Takes client socket as argument.
-    """Handles a single client connection."""
     name = client.recv(BUFSIZ).decode("utf8")
+    tower=int(name[-1])-1 # Gives us Tower Index Number
     client.send(bytes('Welcome', "utf8"))
     msg = "%s has joined the chat!" % name
     print (msg)
-    #broadcast(bytes(msg, "utf8"))
     clients[client] = name
 
     while True:
-        for tower in range(len(tower_data)):
-            for esp in range(len(tower_data[tower])):
-                command = 'Tower' + str(tower+1) + ' ' + str(esp)
-                print(command)
-                broadcast(bytes(command, "utf8"))
-                done = False
-                while done == False:
-                    msg = client.recv(BUFSIZ).decode("utf8")
-                    if msg == 'Done':
-                        done == True
-                    else:
-                        continue
+        # Iterates through the tower_data array
+        for esp in range(len(tower_data[tower])):
+            # Creates a command to send to the tower
+            command = 'Tower' + str(tower+1) + ' ' + str(esp)
+            print(command)
+            # Broadcasts the command
+            broadcast(bytes(command, "utf8"))
+            # Waits for Pi to respond before sending next command
+            done = False
+            while done == False:
+                if client.recv(BUFSIZ).decode("utf8") == 'Done':
+                    done = True
+                else:
+                    continue
         # command = input("Enter Command")
         # broadcast(bytes(command, "utf8"))
         # USER_INPUT = Thread(target=user_input)
@@ -61,17 +63,18 @@ def handle_client(client):  # Takes client socket as argument.
         #     del clients[client]
         #     broadcast(bytes("%s has left the chat." % name, "utf8"))
         #     break
-
+# For Debugging
 def user_input():
     while True:
         command = input("Enter Command")
         broadcast(bytes(command, "utf8"))
 
+# Broadcasts a message to all the clients
 def broadcast(msg, prefix=""):  # prefix is for name identification.
-    """Broadcasts a message to all the clients."""
     for sock in clients:
         sock.send(bytes(prefix, "utf8")+msg)
 
+# In development
 def send_file(filename, buffer):
     esplog.info('send_file started')
     f = open(filename,'rb')
@@ -84,6 +87,7 @@ def send_file(filename, buffer):
             f.close()
     esplog.info(filename + ' Sent!')
 
+# Creates an array to select esps. Used on the Pis
 def esp_selector(esp):
     esplog.info('esp_selector started')
     if int(esp) == 0:
@@ -107,6 +111,7 @@ def esp_selector(esp):
     return [esp_binary[5], esp_binary[4], esp_binary[3], esp_binary[2]]
     esplog.info('esp_selector complete')
 
+# Imports the YAML Config File
 def import_config(configfile):
     esplog.info('import_config started : ' + configfile)
     with open(configfile, 'r') as stream:
@@ -119,6 +124,7 @@ def import_config(configfile):
     esplog.info('import_config complete')
     esplog.info(data)
 
+# Creates arrays from the YAML File, easier to iterate through
 def get_tower_info():
     esplog.info('tower IPs and data array started')
     for header in config:
