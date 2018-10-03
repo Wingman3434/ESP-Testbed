@@ -401,3 +401,15 @@
 2018-10-04 00:09:01,271 - ESP_Logger - INFO - tower IPs and data array started
 2018-10-04 00:09:01,272 - ESP_Logger - INFO - tower ips : ['192.168.0.31', '192.168.0.32', '192.168.0.33', '192.168.0.34']
 2018-10-04 00:09:01,272 - ESP_Logger - INFO - tower data : [[['ESP0', 'FileNameA'], ['ESP1', 'FileNameB']], [['ESP0', 'FileNameA'], ['ESP1', 'FileNameB']], [['ALL', 'FileNameA']], [['EVEN', 'FileNameB'], ['ODD', 'FileNameA']]]
+2018-10-04 00:14:57,235 - ESP_Logger - INFO - import_config started : config.yaml
+2018-10-04 00:14:57,240 - ESP_Logger - INFO - tower IPs and data array started
+2018-10-04 00:14:57,240 - ESP_Logger - INFO - tower ips : ['192.168.0.31', '192.168.0.32', '192.168.0.33', '192.168.0.34']
+2018-10-04 00:14:57,240 - ESP_Logger - INFO - tower data : [[['ESP0', 'FileNameA'], ['ESP1', 'FileNameB']], [['ESP0', 'FileNameA'], ['ESP1', 'FileNameB']], [['ALL', 'FileNameA']], [['EVEN', 'FileNameB'], ['ODD', 'FileNameA']]]
+2018-10-04 00:15:48,249 - ESP_Logger - INFO - import_config started : config.yaml
+2018-10-04 00:15:48,256 - ESP_Logger - INFO - tower IPs and data array started
+2018-10-04 00:15:48,256 - ESP_Logger - INFO - tower ips : ['192.168.0.31', '192.168.0.32', '192.168.0.33', '192.168.0.34']
+2018-10-04 00:15:48,256 - ESP_Logger - INFO - tower data : [[['ESP0', 'FileNameA'], ['ESP1', 'FileNameB']], [['ESP0', 'FileNameA'], ['ESP1', 'FileNameB']], [['ALL', 'FileNameA']], [['EVEN', 'FileNameB'], ['ODD', 'FileNameA']]]
+2018-10-04 00:20:30,860 - ESP_Logger - INFO - import_config started : config.yaml
+2018-10-04 00:20:30,865 - ESP_Logger - INFO - tower IPs and data array started
+2018-10-04 00:20:30,865 - ESP_Logger - INFO - tower ips : ['192.168.0.31', '192.168.0.32', '192.168.0.33', '192.168.0.34']
+2018-10-04 00:20:30,866 - ESP_Logger - INFO - tower data : [[['ESP0', 'FileNameA'], ['ESP1', 'FileNameB']], [['ESP0', 'FileNameA'], ['ESP1', 'FileNameB']], [['ALL', 'FileNameA']], [['EVEN', 'FileNameB'], ['ODD', 'FileNameA']]]

@@ -117,8 +117,8 @@ def receive():
         try:
             msg = client_socket.recv(BUFSIZ).decode("utf8")
             if msg == 'Name?':
-                client_socket.send(platform.node())
-            elif platform.node() in msg:
+                client_socket.send(my_name)
+            elif my_name in msg:
                 print (msg)
         except OSError:  # Possibly client has left the chat.
             break
@@ -132,6 +132,7 @@ def send(message):  #Send Message
 ## Variables
 
 #Pin Numbers
+my_name = platform.node()
 S0 = 31
 S1 = 33
 S2 = 35
