@@ -94,13 +94,13 @@ def temp_flash(esp, port, location, file):
     reset_esp(1)
 
     #Read ESP Serial for 10 Lines
-    esp_serial = serial.Serial('/dev/serial0','115200')
-    for x in range(1,11):
-        try:
-            print (esp_serial.readline())
-        except SerialException:
-            print ('port already open')
-    esp_serial.close()
+    # esp_serial = serial.Serial('/dev/serial0','115200')
+    # for x in range(1,11):
+    #     try:
+    #         print (esp_serial.readline())
+    #     except SerialException:
+    #         print ('port already open')
+    # esp_serial.close()
 
 #Comms Functions
 def connect(ADDR,CONNECTED):
@@ -119,7 +119,9 @@ def receive():
             if msg == 'Name?':
                 client_socket.send(my_name)
             elif my_name in msg:
-                print (msg)
+                command = msg.split(' ')
+                #temp_flash(1, serial_port, flash_location, file_location)
+                print (command)
         except OSError:  # Possibly client has left the chat.
             break
 
@@ -144,7 +146,7 @@ RST = 40
 esptool_path = '/home/pi/esptool/esptool.py'
 serial_port = '/dev/serial0'
 flash_location = '0x0'
-file_location = '/home/pi/esptool/test/images/SpamCount.bin'
+file_location = '/home/pi/SpamCount.bin'
 
 if platform.system() != 'Windows':
     #Setup GPIO
