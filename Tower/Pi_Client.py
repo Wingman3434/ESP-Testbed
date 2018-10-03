@@ -118,7 +118,7 @@ def receive():
             msg = client_socket.recv(BUFSIZ).decode("utf8")
             if msg == 'Name?':
                 client_socket.send(platform.node())
-            else:
+            elif platform.node() in msg:
                 print (msg)
         except OSError:  # Possibly client has left the chat.
             break

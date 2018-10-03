@@ -51,7 +51,7 @@ def handle_client(client):  # Takes client socket as argument.
 def user_input():
     while True:
         command = input("Enter Command")
-        client.send(bytes(command, "utf8"))
+        broadcast(bytes(command, "utf8"))
 
 def broadcast(msg, prefix=""):  # prefix is for name identification.
     """Broadcasts a message to all the clients."""
