@@ -3,24 +3,6 @@ from threading import Thread
 import yaml, select, logging, signal, time
 from collections import OrderedDict
 
-# create logger with 'ESP Logger'
-esplog = logging.getLogger('ESP_Logger')
-esplog.setLevel(logging.DEBUG)
-# create file handler which logs everything
-fh = logging.FileHandler('ESP_Tower.log')
-fh.setLevel(logging.DEBUG)
-# create console handler with a higher log level
-ch = logging.StreamHandler()
-ch.setLevel(logging.ERROR)
-# create formatter and add it to the handlers
-formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-fh.setFormatter(formatter)
-ch.setFormatter(formatter)
-# add the handlers to the logger
-esplog.addHandler(fh)
-esplog.addHandler(ch)
-
-
 def accept_incoming_connections():
     """Sets up handling for incoming clients."""
     while True:
@@ -42,55 +24,22 @@ def handle_client(client):  # Takes client socket as argument.
     clients[client] = name
 
     while True:
-        msg = client.recv(BUFSIZ)
-        if msg != bytes("{quit}", "utf8"):
-            broadcast(msg, name+": ")
-        else:
-            client.send(bytes("{quit}", "utf8"))
-            client.close()
-            del clients[client]
-            broadcast(bytes("%s has left the chat." % name, "utf8"))
-            break
+        client.send(bytes("FOOOORRR LOOOPPPP", "utf8"))
+        # msg = client.recv(BUFSIZ)
+        # if msg != bytes("{quit}", "utf8"):
+        #     broadcast(msg, name+": ")
+        # else:
+        #     client.send(bytes("{quit}", "utf8"))
+        #     client.close()
+        #     del clients[client]
+        #     broadcast(bytes("%s has left the chat." % name, "utf8"))
+        #     break
 
 
 def broadcast(msg, prefix=""):  # prefix is for name identification.
     """Broadcasts a message to all the clients."""
     for sock in clients:
         sock.send(bytes(prefix, "utf8")+msg)
-
-   
-
-class Timeout():
-    """Timeout class using ALARM signal."""
-    class Timeout(Exception):
-        pass
- 
-    def __init__(self, sec):
-        self.sec = sec
- 
-    def __enter__(self):
-        signal.signal(signal.SIGALRM, self.raise_timeout)
-        signal.alarm(self.sec)
- 
-    def __exit__(self, *args):
-        signal.alarm(0)    # disable alarm
- 
-    def raise_timeout(self, *args):
-        raise Timeout.Timeout()
-
-def get_ip():
-    esplog.info('get_ip started')
-    s = socket(AF_INET, SOCK_DGRAM)
-    try:
-        # doesn't even have to be reachable
-        s.connect(('10.255.255.255', 1))
-        IP = s.getsockname()[0]
-    except:
-        IP = '127.0.0.1'
-    finally:
-        s.close()
-    esplog.info('get_ip complete : ' + IP )
-    return IP
 
 def send_file(filename, buffer):
     esplog.info('send_file started')
@@ -139,37 +88,54 @@ def import_config(configfile):
     esplog.info('import_config complete')
     esplog.info(data)
 
+def get_tower_info():
+    esplog.info('tower IPs and data array started')
+    tower_ips = []
+    tower_data = []
+    for header in config:
+        if ('tower' in header.lower() and config[header] != None):
+            tower_ips.append(config[header]['IP'])
+            temp_list = []
+            for key in config[header]:
+                if (key.lower() !='ip' and config[header][key] != None):
+                    #print (key)
+                    temp_list.append([key, config[header][key]])
+            tower_data.append(temp_list)
+        #elif ('Files' in key and config[key] != None):
+
+    esplog.info('tower ips : ' + str(tower_ips))
+    esplog.info('tower data : ' + str(tower_data))
+
+    for tower in tower_data:
+        for esp in tower:
+            print (esp[0])
+            if ('all' in esp[0].lower()):
+                print ('Make All ESPs Flash')
+            elif ('odd' in esp[0].lower()):
+                print ('Make All Odd ESPs Flash')
+            elif ('even' in esp[0].lower()):
+                print ('Make All Even ESPs Flash')
+
+# create logger with 'ESP Logger'
+esplog = logging.getLogger('ESP_Logger')
+esplog.setLevel(logging.DEBUG)
+# create file handler which logs everything
+fh = logging.FileHandler('ESP_Tower.log')
+fh.setLevel(logging.DEBUG)
+# create console handler with a higher log level
+ch = logging.StreamHandler()
+ch.setLevel(logging.ERROR)
+# create formatter and add it to the handlers
+formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+fh.setFormatter(formatter)
+ch.setFormatter(formatter)
+# add the handlers to the logger
+esplog.addHandler(fh)
+esplog.addHandler(ch)
+
+#Import config and build array
 config = import_config('config.yaml')
-
-esplog.info('tower IPs and data array started')
-tower_ips = []
-tower_data = []
-for header in config:
-    if ('tower' in header.lower() and config[header] != None):
-        tower_ips.append(config[header]['IP'])
-        temp_list = []
-        for key in config[header]:
-            if (key.lower() !='ip' and config[header][key] != None):
-                #print (key)
-                temp_list.append([key, config[header][key]])
-        tower_data.append(temp_list)
-    #elif ('Files' in key and config[key] != None):
-        
-esplog.info('tower ips : ' + str(tower_ips))
-esplog.info('tower data : ' + str(tower_data))
-
-for tower in tower_data:
-    for esp in tower:
-        print (esp[0])
-        if ('all' in esp[0].lower()):
-            print ('Make All ESPs Flash')
-        elif ('odd' in esp[0].lower()):
-            print ('Make All Odd ESPs Flash')
-        elif ('even' in esp[0].lower()):
-            print ('Make All Even ESPs Flash')
-
-for x in range(0,16):
-    print (esp_selector(x))
+get_tower_info()
 
 #Server Variables
 clients = {}

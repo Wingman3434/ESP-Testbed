@@ -1,7 +1,7 @@
-#import RPi.GPIO as GPIO
-import time, serial, os, sys, select
+import RPi.GPIO as GPIO
 from socket import socket, AF_INET, SOCK_STREAM, SOCK_DGRAM
 from threading import Thread
+import time, serial, os, sys, select, logging, argparse
 
 def get_ip():
     s = socket(AF_INET, SOCK_DGRAM)
@@ -18,7 +18,7 @@ def get_ip():
 #GPIO Functions
 
 def GPIO_Setup():
-    
+
     GPIO.setmode(GPIO.BOARD)
     GPIO.setwarnings(False)
 
@@ -26,17 +26,17 @@ def GPIO_Setup():
     GPIO.setup(S1,GPIO.OUT)
     GPIO.setup(S2,GPIO.OUT)
     GPIO.setup(S3,GPIO.OUT)
-    
+
     GPIO.setup(GPIO0,GPIO.OUT)
     GPIO.setup(RST,GPIO.OUT)
 
 def GPIO_Default():
-    
+
     GPIO.output(S0,0)
     GPIO.output(S1,0)
     GPIO.output(S2,0)
     GPIO.output(S3,0)
-    
+
     GPIO.output(GPIO0,1)
     GPIO.output(RST,1)
 
@@ -73,23 +73,23 @@ def select_esp(array):
     GPIO.output(S1,int(array[1]))
     GPIO.output(S2,int(array[2]))
     GPIO.output(S3,int(array[3]))
-    
+
 def temp_flash(esp, port, location, file):
     print ('Flashing ESP: ' + str(esp))
-    
+
     #Select ESP
     select_esp(esp_selector(esp))
 
     #Reset ESP to Program Mode
     reset_esp(0)
-    
+
     #Flash ESP
     command = esptool_path + ' --port ' + port + ' write_flash ' + location + ' ' + file
     os.system(command)
-    
+
     #Reset ESP to Boot Mode
     reset_esp(1)
-    
+
     #Read ESP Serial for 10 Lines
     esp_serial = serial.Serial('/dev/serial0','115200')
     for x in range(1,11):
@@ -107,7 +107,7 @@ def connect(ADDR,CONNECTED):
             CONNECTED = True
         except OSError:
             print ('No Server Found!')
-        
+
 def receive():
     """Handles receiving of messages."""
     while True:
@@ -139,18 +139,23 @@ serial_port = '/dev/serial0'
 flash_location = '0x0'
 file_location = '/home/pi/esptool/test/images/SpamCount.bin'
 
+#Parse Arguments
+parser = argparse.ArgumentParser()
+parser.add_argument("host", help="IP of the Mgmt PC")
+args = parser.parse_args()
+
 #Setup GPIO
-#GPIO_Setup()
+GPIO_Setup()
 
 #Default GPIO Values
-#GPIO_Default()
+GPIO_Default()
 
 #Select, Reset, Flash & Read ESP
 #temp_flash(1, serial_port, flash_location, file_location)
 #temp_flash(7, serial_port, flash_location, file_location)
 #temp_flash(10, serial_port, flash_location, file_location)
 
-HOST = get_ip()
+HOST = args.host
 PORT = 5000
 CONNECTED = False
 
@@ -164,4 +169,3 @@ connect_thread.start()
 
 receive_thread = Thread(target=receive)
 receive_thread.start()
-    
