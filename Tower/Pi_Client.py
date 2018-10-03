@@ -108,7 +108,7 @@ def connect(ADDR,CONNECTED):
         try:
             client_socket.connect(ADDR)
             CONNECTED = True
-        except OSError:
+        except:
             print ('No Server Found!')
 
 def receive():
@@ -117,7 +117,7 @@ def receive():
         try:
             msg = client_socket.recv(BUFSIZ).decode("utf8")
             if msg == 'Name?':
-                client_socket.send(bytes(platform.node(), "utf8"))
+                client_socket.send(bytes(platform.node()[0], "utf8"))
 
             print (msg)
         except OSError:  # Possibly client has left the chat.
