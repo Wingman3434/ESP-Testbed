@@ -1,7 +1,10 @@
-import RPi.GPIO as GPIO
+import platform
+if platform.system() != 'Windows':
+    import RPi.GPIO as GPIO
+    import serial
 from socket import socket, AF_INET, SOCK_STREAM, SOCK_DGRAM
 from threading import Thread
-import time, serial, os, sys, select, logging, argparse
+import time, os, sys, select, logging, argparse
 
 def get_ip():
     s = socket(AF_INET, SOCK_DGRAM)
@@ -113,6 +116,9 @@ def receive():
     while True:
         try:
             msg = client_socket.recv(BUFSIZ).decode("utf8")
+            if msg == 'Name?':
+                client_socket.send(bytes(platform.node(), "utf8"))
+
             print (msg)
         except OSError:  # Possibly client has left the chat.
             break
@@ -139,24 +145,28 @@ serial_port = '/dev/serial0'
 flash_location = '0x0'
 file_location = '/home/pi/esptool/test/images/SpamCount.bin'
 
-#Parse Arguments
-parser = argparse.ArgumentParser()
-parser.add_argument("host", help="IP of the Mgmt PC")
-args = parser.parse_args()
-print(args.host)
+if platform.system() != 'Windows':
+    #Setup GPIO
+    GPIO_Setup()
 
-#Setup GPIO
-GPIO_Setup()
-
-#Default GPIO Values
-GPIO_Default()
+if platform.system() != 'Windows':
+    #Default GPIO Values
+    GPIO_Default()
 
 #Select, Reset, Flash & Read ESP
 #temp_flash(1, serial_port, flash_location, file_location)
 #temp_flash(7, serial_port, flash_location, file_location)
 #temp_flash(10, serial_port, flash_location, file_location)
 
-HOST = args.host
+if platform.system() != 'Windows':
+    #Parse Arguments
+    parser = argparse.ArgumentParser()
+    parser.add_argument("host", help="IP of the Mgmt PC")
+    args = parser.parse_args()
+    print(args.host)
+    HOST = args.host
+else:
+    HOST = get_ip()
 PORT = 5000
 CONNECTED = False
 
