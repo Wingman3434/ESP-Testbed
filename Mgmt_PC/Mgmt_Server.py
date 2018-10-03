@@ -35,7 +35,9 @@ def handle_client(client):  # Takes client socket as argument.
     clients[client] = name
 
     while True:
-        client.send(bytes("FOOOORRR LOOOPPPP", "utf8"))
+        USER_INPUT = Thread(target=user_input)
+        USER_INPUT.start()
+        # client.send(bytes("FOOOORRR LOOOPPPP", "utf8"))
         # msg = client.recv(BUFSIZ)
         # if msg != bytes("{quit}", "utf8"):
         #     broadcast(msg, name+": ")
@@ -46,6 +48,10 @@ def handle_client(client):  # Takes client socket as argument.
         #     broadcast(bytes("%s has left the chat." % name, "utf8"))
         #     break
 
+def user_input():
+    while True:
+        command = input("Enter Command")
+        client.send(bytes(command, "utf8"))
 
 def broadcast(msg, prefix=""):  # prefix is for name identification.
     """Broadcasts a message to all the clients."""
