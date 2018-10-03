@@ -143,6 +143,7 @@ file_location = '/home/pi/esptool/test/images/SpamCount.bin'
 parser = argparse.ArgumentParser()
 parser.add_argument("host", help="IP of the Mgmt PC")
 args = parser.parse_args()
+print(args.host)
 
 #Setup GPIO
 GPIO_Setup()

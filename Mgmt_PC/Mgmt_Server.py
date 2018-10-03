@@ -3,6 +3,18 @@ from threading import Thread
 import yaml, select, logging, signal, time
 from collections import OrderedDict
 
+def get_ip():
+    s = socket(AF_INET, SOCK_DGRAM)
+    try:
+        # doesn't even have to be reachable
+        s.connect(('8.8.8.8', 1))
+        IP = s.getsockname()[0]
+    except:
+        IP = '127.0.0.1'
+    finally:
+        s.close()
+    return IP
+
 def accept_incoming_connections():
     """Sets up handling for incoming clients."""
     while True:
