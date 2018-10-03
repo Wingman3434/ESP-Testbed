@@ -1,4 +1,6 @@
-import yaml, socket, select, logging, signal, time
+from socket import socket, AF_INET, SOCK_STREAM, SOCK_DGRAM
+from threading import Thread
+import yaml, select, logging, signal, time
 from collections import OrderedDict
 
 # create logger with 'ESP Logger'
@@ -18,14 +20,45 @@ ch.setFormatter(formatter)
 esplog.addHandler(fh)
 esplog.addHandler(ch)
 
-def print_menu():
-    print (30 * '-')
-    print ("   M A I N - M E N U")
-    print (30 * '-')
-    print ("1. Option 1")
-    print ("2. Option 2")
-    print ("3. Option 3")
-    print (30 * '-')
+
+def accept_incoming_connections():
+    """Sets up handling for incoming clients."""
+    while True:
+        client, client_address = SERVER.accept()
+        print("%s:%s has connected." % client_address)
+        client.send(bytes("Greetings from the cave! Now type your name and press enter!", "utf8"))
+        addresses[client] = client_address
+        Thread(target=handle_client, args=(client,)).start()
+
+
+def handle_client(client):  # Takes client socket as argument.
+    """Handles a single client connection."""
+
+    name = client.recv(BUFSIZ).decode("utf8")
+    welcome = 'Welcome %s! If you ever want to quit, type {quit} to exit.' % name
+    client.send(bytes(welcome, "utf8"))
+    msg = "%s has joined the chat!" % name
+    broadcast(bytes(msg, "utf8"))
+    clients[client] = name
+
+    while True:
+        msg = client.recv(BUFSIZ)
+        if msg != bytes("{quit}", "utf8"):
+            broadcast(msg, name+": ")
+        else:
+            client.send(bytes("{quit}", "utf8"))
+            client.close()
+            del clients[client]
+            broadcast(bytes("%s has left the chat." % name, "utf8"))
+            break
+
+
+def broadcast(msg, prefix=""):  # prefix is for name identification.
+    """Broadcasts a message to all the clients."""
+    for sock in clients:
+        sock.send(bytes(prefix, "utf8")+msg)
+
+   
 
 class Timeout():
     """Timeout class using ALARM signal."""
@@ -47,7 +80,7 @@ class Timeout():
 
 def get_ip():
     esplog.info('get_ip started')
-    s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+    s = socket(AF_INET, SOCK_DGRAM)
     try:
         # doesn't even have to be reachable
         s.connect(('10.255.255.255', 1))
@@ -138,53 +171,26 @@ for tower in tower_data:
 for x in range(0,16):
     print (esp_selector(x))
 
-# List to keep track of socket descriptors
-CONNECTION_LIST = []
-RECV_BUFFER = 1024 # Advisable to keep it as an exponent of 2
-PORT = 50000
+#Server Variables
+clients = {}
+addresses = {}
 
-server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-# this has no effect, why ?
-server_socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-server_socket.bind((get_ip(), PORT))
-server_socket.listen(10)
+HOST = get_ip()
+PORT = 5000
+BUFSIZ = 1024
+ADDR = (HOST, PORT)
 
-# Add server socket to the list of readable connections
-CONNECTION_LIST.append(server_socket)
+SERVER = socket(AF_INET, SOCK_STREAM)
+SERVER.bind(ADDR)
 
 print ("Chat server started on port " + str(PORT))
 
-while 1:
-    # Get the list sockets which are ready to be read through select
-    # read_sockets,write_sockets,error_sockets = select.select([],CONNECTION_LIST,[])
-    for sock in CONNECTION_LIST:
-        #New connection
-        if sock == server_socket:
-            # Handle the case in which there is a new connection recieved through server_socket
-            sockfd, addr = server_socket.accept()
-            CONNECTION_LIST.append(sockfd)
-            print ("Client (%s, %s) connected" % addr)
-    #Some incoming message from a client
-    else:
-        # Send/recieve data to/from client
-        try:
-            data = sock.recv(RECV_BUFFER)
-            print(data.decode())
-            if data.decode()== "Hello, World!":
-                message = "Hello, World!".encode()
-                sock.send(message)
-            else:
-                message = "Goodbye, World!".encode()
-                sock.send(message)
-                sock.close()
-                CONNECTION_LIST.remove(sock)
-        except:
-            #broadcast_data(sock, "Client (%s, %s) is offline" % addr)
-            print ("Client (%s, %s) is offline" % addr)
-            sock.close()
-            CONNECTION_LIST.remove(sock)
-
-server_socket.close()
+SERVER.listen(5)
+print("Waiting for connection...")
+ACCEPT_THREAD = Thread(target=accept_incoming_connections)
+ACCEPT_THREAD.start()
+ACCEPT_THREAD.join()
+SERVER.close()
 
 #find key with tower
 #check if ip exists

@@ -1,19 +1,21 @@
-import RPi.GPIO as GPIO
-import time, subprocess, serial, os
+#import RPi.GPIO as GPIO
+import time, serial, os, sys, select
+from socket import socket, AF_INET, SOCK_STREAM, SOCK_DGRAM
+from threading import Thread
 
-#Pin Numbers
-S0 = 31
-S1 = 33
-S2 = 35
-S3 = 37
-GPIO0 = 38
-RST = 40
+def get_ip():
+    s = socket(AF_INET, SOCK_DGRAM)
+    try:
+        # doesn't even have to be reachable
+        s.connect(('8.8.8.8', 1))
+        IP = s.getsockname()[0]
+    except:
+        IP = '127.0.0.1'
+    finally:
+        s.close()
+    return IP
 
-#Other Variables
-esptool_path = '/home/pi/esptool/esptool.py'
-serial_port = '/dev/serial0'
-flash_location = '0x0'
-file_location = '/home/pi/esptool/test/images/SpamCount.bin'
+#GPIO Functions
 
 def GPIO_Setup():
     
@@ -83,12 +85,7 @@ def temp_flash(esp, port, location, file):
     
     #Flash ESP
     command = esptool_path + ' --port ' + port + ' write_flash ' + location + ' ' + file
-    #print (command)
     os.system(command)
-    #subprocess.call(['/home/pi/esptool/esptool.py', '--port', '/dev/serial0', 'write_flash', '0x0', '/home/pi/esptool/test/images/SpamCount.bin'], shell=True)
-    #flash_command = subprocess.Popen([esptool_path,'--port',serial_port,'write_flash',flash_location,file_location], stdout=subprocess.PIPE)
-    #output = flash_command.communicate()[0]
-    #print output
     
     #Reset ESP to Boot Mode
     reset_esp(1)
@@ -102,13 +99,69 @@ def temp_flash(esp, port, location, file):
             print ('port already open')
     esp_serial.close()
 
+#Comms Functions
+def connect(ADDR,CONNECTED):
+    while CONNECTED==False:
+        try:
+            client_socket.connect(ADDR)
+            CONNECTED = True
+        except OSError:
+            print ('No Server Found!')
+        
+def receive():
+    """Handles receiving of messages."""
+    while True:
+        try:
+            msg = client_socket.recv(BUFSIZ).decode("utf8")
+            print (msg)
+        except OSError:  # Possibly client has left the chat.
+            break
+
+def send(message):  #Send Message
+    """Handles sending of messages."""
+    client_socket.send(bytes(message, "utf8"))
+    if message == "{quit}":
+        client_socket.close()
+
+## Variables
+
+#Pin Numbers
+S0 = 31
+S1 = 33
+S2 = 35
+S3 = 37
+GPIO0 = 38
+RST = 40
+
+#Other Variables
+esptool_path = '/home/pi/esptool/esptool.py'
+serial_port = '/dev/serial0'
+flash_location = '0x0'
+file_location = '/home/pi/esptool/test/images/SpamCount.bin'
+
 #Setup GPIO
-GPIO_Setup()
+#GPIO_Setup()
 
 #Default GPIO Values
-GPIO_Default()
+#GPIO_Default()
 
 #Select, Reset, Flash & Read ESP
-temp_flash(1, serial_port, flash_location, file_location)
-temp_flash(7, serial_port, flash_location, file_location)
-temp_flash(10, serial_port, flash_location, file_location)
+#temp_flash(1, serial_port, flash_location, file_location)
+#temp_flash(7, serial_port, flash_location, file_location)
+#temp_flash(10, serial_port, flash_location, file_location)
+
+HOST = get_ip()
+PORT = 5000
+CONNECTED = False
+
+BUFSIZ = 1024
+ADDR = (HOST, PORT)
+
+client_socket = socket(AF_INET, SOCK_STREAM)
+
+connect_thread = Thread(target=connect(ADDR,CONNECTED))
+connect_thread.start()
+
+receive_thread = Thread(target=receive)
+receive_thread.start()
+    

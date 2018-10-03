@@ -1,0 +1,20 @@
+---
+Files:
+  FileNameA: user.bin
+  FileNameB: "C:\\Test\\user.bin"
+Tower1:
+  IP: "192.168.0.31"
+  ESP0: FileNameA
+  ESP1: FileNameB
+Tower2:
+  IP: "192.168.0.32"
+  ESP0: FileNameA
+  ESP1: FileNameB
+Tower3:
+  IP: "192.168.0.33"
+  ALL: FileNameA
+Tower4:
+  IP: "192.168.0.34"
+  EVEN: FileNameB
+  ODD: FileNameA
+Tower5: ~

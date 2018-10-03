@@ -1,0 +1,347 @@
+2018-10-02 12:37:35,660 - ESP_Logger - INFO - import_config started : config.yaml
+2018-10-02 12:38:10,127 - ESP_Logger - INFO - import_config started : config.yaml
+2018-10-02 12:38:10,127 - ESP_Logger - INFO - tower IPs and data array started
+2018-10-02 12:38:10,127 - ESP_Logger - INFO - tower ips : ['192.168.0.31', '192.168.0.32', '192.168.0.33', '192.168.0.34']
+2018-10-02 12:38:10,127 - ESP_Logger - INFO - tower data : [[['ESP0', 'FileNameA'], ['ESP1', 'FileNameB']], [['ESP0', 'FileNameA'], ['ESP1', 'FileNameB']], [['ALL', 'FileNameA']], [['EVEN', 'FileNameB'], ['ODD', 'FileNameA']]]
+2018-10-02 12:38:10,143 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:38:10,143 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:38:10,143 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:38:10,143 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:38:10,143 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:38:10,143 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:38:10,143 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:38:10,143 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:38:10,143 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:38:10,143 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:38:10,143 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:38:10,143 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:38:10,143 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:38:10,159 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:38:10,159 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:38:10,159 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:38:10,159 - ESP_Logger - INFO - get_ip started
+2018-10-02 12:38:10,159 - ESP_Logger - INFO - get_ip complete : 10.132.135.69
+2018-10-02 12:41:14,774 - ESP_Logger - INFO - import_config started : config.yaml
+2018-10-02 12:41:14,774 - ESP_Logger - INFO - tower IPs and data array started
+2018-10-02 12:41:14,774 - ESP_Logger - INFO - tower ips : ['192.168.0.31', '192.168.0.32', '192.168.0.33', '192.168.0.34']
+2018-10-02 12:41:14,774 - ESP_Logger - INFO - tower data : [[['ESP0', 'FileNameA'], ['ESP1', 'FileNameB']], [['ESP0', 'FileNameA'], ['ESP1', 'FileNameB']], [['ALL', 'FileNameA']], [['EVEN', 'FileNameB'], ['ODD', 'FileNameA']]]
+2018-10-02 12:41:14,789 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:41:14,789 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:41:14,789 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:41:14,789 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:41:14,789 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:41:14,789 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:41:14,789 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:41:14,789 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:41:14,789 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:41:14,789 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:41:14,789 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:41:14,789 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:41:14,789 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:41:14,789 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:41:14,789 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:41:14,789 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:41:14,789 - ESP_Logger - INFO - get_ip started
+2018-10-02 12:41:14,789 - ESP_Logger - INFO - get_ip complete : 10.132.135.69
+2018-10-02 12:43:06,093 - ESP_Logger - INFO - import_config started : config.yaml
+2018-10-02 12:43:06,109 - ESP_Logger - INFO - tower IPs and data array started
+2018-10-02 12:43:06,109 - ESP_Logger - INFO - tower ips : ['192.168.0.31', '192.168.0.32', '192.168.0.33', '192.168.0.34']
+2018-10-02 12:43:06,109 - ESP_Logger - INFO - tower data : [[['ESP0', 'FileNameA'], ['ESP1', 'FileNameB']], [['ESP0', 'FileNameA'], ['ESP1', 'FileNameB']], [['ALL', 'FileNameA']], [['EVEN', 'FileNameB'], ['ODD', 'FileNameA']]]
+2018-10-02 12:43:06,109 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:43:06,109 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:43:06,109 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:43:06,109 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:43:06,109 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:43:06,109 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:43:06,109 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:43:06,109 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:43:06,109 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:43:06,109 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:43:06,109 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:43:06,109 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:43:06,109 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:43:06,109 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:43:06,109 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:43:06,109 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:43:06,109 - ESP_Logger - INFO - get_ip started
+2018-10-02 12:43:06,109 - ESP_Logger - INFO - get_ip complete : 10.132.135.69
+2018-10-02 12:44:55,074 - ESP_Logger - INFO - import_config started : config.yaml
+2018-10-02 12:44:55,074 - ESP_Logger - INFO - tower IPs and data array started
+2018-10-02 12:44:55,074 - ESP_Logger - INFO - tower ips : ['192.168.0.31', '192.168.0.32', '192.168.0.33', '192.168.0.34']
+2018-10-02 12:44:55,074 - ESP_Logger - INFO - tower data : [[['ESP0', 'FileNameA'], ['ESP1', 'FileNameB']], [['ESP0', 'FileNameA'], ['ESP1', 'FileNameB']], [['ALL', 'FileNameA']], [['EVEN', 'FileNameB'], ['ODD', 'FileNameA']]]
+2018-10-02 12:44:55,074 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:44:55,074 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:44:55,074 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:44:55,074 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:44:55,074 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:44:55,074 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:44:55,074 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:44:55,074 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:44:55,074 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:44:55,090 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:44:55,090 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:44:55,090 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:44:55,090 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:44:55,090 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:44:55,090 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:44:55,090 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:44:55,090 - ESP_Logger - INFO - get_ip started
+2018-10-02 12:44:55,090 - ESP_Logger - INFO - get_ip complete : 10.132.135.69
+2018-10-02 12:52:24,514 - ESP_Logger - INFO - import_config started : config.yaml
+2018-10-02 12:52:24,514 - ESP_Logger - INFO - tower IPs and data array started
+2018-10-02 12:52:24,514 - ESP_Logger - INFO - tower ips : ['192.168.0.31', '192.168.0.32', '192.168.0.33', '192.168.0.34']
+2018-10-02 12:52:24,514 - ESP_Logger - INFO - tower data : [[['ESP0', 'FileNameA'], ['ESP1', 'FileNameB']], [['ESP0', 'FileNameA'], ['ESP1', 'FileNameB']], [['ALL', 'FileNameA']], [['EVEN', 'FileNameB'], ['ODD', 'FileNameA']]]
+2018-10-02 12:52:24,514 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:52:24,514 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:52:24,514 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:52:24,529 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:52:24,529 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:52:24,529 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:52:24,529 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:52:24,529 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:52:24,529 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:52:24,529 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:52:24,529 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:52:24,529 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:52:24,529 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:52:24,529 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:52:24,529 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:52:24,529 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:52:24,529 - ESP_Logger - INFO - get_ip started
+2018-10-02 12:52:34,212 - ESP_Logger - INFO - import_config started : config.yaml
+2018-10-02 12:52:34,212 - ESP_Logger - INFO - tower IPs and data array started
+2018-10-02 12:52:34,228 - ESP_Logger - INFO - tower ips : ['192.168.0.31', '192.168.0.32', '192.168.0.33', '192.168.0.34']
+2018-10-02 12:52:34,228 - ESP_Logger - INFO - tower data : [[['ESP0', 'FileNameA'], ['ESP1', 'FileNameB']], [['ESP0', 'FileNameA'], ['ESP1', 'FileNameB']], [['ALL', 'FileNameA']], [['EVEN', 'FileNameB'], ['ODD', 'FileNameA']]]
+2018-10-02 12:52:34,228 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:52:34,228 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:52:34,228 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:52:34,228 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:52:34,228 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:52:34,228 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:52:34,228 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:52:34,228 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:52:34,228 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:52:34,228 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:52:34,228 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:52:34,228 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:52:34,228 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:52:34,228 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:52:34,228 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:52:34,228 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:52:34,228 - ESP_Logger - INFO - get_ip started
+2018-10-02 12:55:09,147 - ESP_Logger - INFO - import_config started : config.yaml
+2018-10-02 12:55:09,147 - ESP_Logger - INFO - tower IPs and data array started
+2018-10-02 12:55:09,162 - ESP_Logger - INFO - tower ips : ['192.168.0.31', '192.168.0.32', '192.168.0.33', '192.168.0.34']
+2018-10-02 12:55:09,162 - ESP_Logger - INFO - tower data : [[['ESP0', 'FileNameA'], ['ESP1', 'FileNameB']], [['ESP0', 'FileNameA'], ['ESP1', 'FileNameB']], [['ALL', 'FileNameA']], [['EVEN', 'FileNameB'], ['ODD', 'FileNameA']]]
+2018-10-02 12:55:09,162 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:55:09,162 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:55:09,162 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:55:09,162 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:55:09,162 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:55:09,162 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:55:09,162 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:55:09,162 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:55:09,162 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:55:09,162 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:55:09,162 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:55:09,162 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:55:09,162 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:55:09,178 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:55:09,178 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:55:09,178 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:55:09,178 - ESP_Logger - INFO - get_ip started
+2018-10-02 12:55:31,374 - ESP_Logger - INFO - import_config started : config.yaml
+2018-10-02 12:55:31,374 - ESP_Logger - INFO - tower IPs and data array started
+2018-10-02 12:55:31,374 - ESP_Logger - INFO - tower ips : ['192.168.0.31', '192.168.0.32', '192.168.0.33', '192.168.0.34']
+2018-10-02 12:55:31,374 - ESP_Logger - INFO - tower data : [[['ESP0', 'FileNameA'], ['ESP1', 'FileNameB']], [['ESP0', 'FileNameA'], ['ESP1', 'FileNameB']], [['ALL', 'FileNameA']], [['EVEN', 'FileNameB'], ['ODD', 'FileNameA']]]
+2018-10-02 12:55:31,390 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:55:31,390 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:55:31,390 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:55:31,390 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:55:31,390 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:55:31,390 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:55:31,390 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:55:31,390 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:55:31,390 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:55:31,390 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:55:31,390 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:55:31,405 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:55:31,405 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:55:31,405 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:55:31,405 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:55:31,405 - ESP_Logger - INFO - esp_selector started
+2018-10-02 12:55:31,405 - ESP_Logger - INFO - get_ip started
+2018-10-02 15:02:10,065 - ESP_Logger - INFO - import_config started : config.yaml
+2018-10-02 15:02:10,071 - ESP_Logger - INFO - tower IPs and data array started
+2018-10-02 15:02:10,075 - ESP_Logger - INFO - tower ips : ['192.168.0.31', '192.168.0.32', '192.168.0.33', '192.168.0.34']
+2018-10-02 15:02:10,075 - ESP_Logger - INFO - tower data : [[['ESP0', 'FileNameA'], ['ESP1', 'FileNameB']], [['ESP0', 'FileNameA'], ['ESP1', 'FileNameB']], [['ALL', 'FileNameA']], [['EVEN', 'FileNameB'], ['ODD', 'FileNameA']]]
+2018-10-02 15:02:10,078 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:02:10,078 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:02:10,079 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:02:10,081 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:02:10,081 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:02:10,082 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:02:10,082 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:02:10,084 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:02:10,084 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:02:10,085 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:02:10,085 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:02:10,093 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:02:10,094 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:02:10,095 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:02:10,096 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:02:10,097 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:02:10,098 - ESP_Logger - INFO - get_ip started
+2018-10-02 15:02:31,143 - ESP_Logger - INFO - get_ip complete : 127.0.0.1
+2018-10-02 15:05:14,035 - ESP_Logger - INFO - import_config started : config.yaml
+2018-10-02 15:05:14,061 - ESP_Logger - INFO - tower IPs and data array started
+2018-10-02 15:05:14,061 - ESP_Logger - INFO - tower ips : ['192.168.0.31', '192.168.0.32', '192.168.0.33', '192.168.0.34']
+2018-10-02 15:05:14,061 - ESP_Logger - INFO - tower data : [[['ESP0', 'FileNameA'], ['ESP1', 'FileNameB']], [['ESP0', 'FileNameA'], ['ESP1', 'FileNameB']], [['ALL', 'FileNameA']], [['EVEN', 'FileNameB'], ['ODD', 'FileNameA']]]
+2018-10-02 15:05:14,064 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:05:14,065 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:05:14,065 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:05:14,066 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:05:14,066 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:05:14,067 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:05:14,067 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:05:14,069 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:05:14,070 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:05:14,070 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:05:14,070 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:05:14,071 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:05:14,071 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:05:14,072 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:05:14,075 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:05:14,075 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:05:14,075 - ESP_Logger - INFO - get_ip started
+2018-10-02 15:05:35,080 - ESP_Logger - INFO - get_ip complete : 127.0.0.1
+2018-10-02 15:09:20,131 - ESP_Logger - INFO - import_config started : config.yaml
+2018-10-02 15:09:20,149 - ESP_Logger - INFO - tower IPs and data array started
+2018-10-02 15:09:20,149 - ESP_Logger - INFO - tower ips : ['192.168.0.31', '192.168.0.32', '192.168.0.33', '192.168.0.34']
+2018-10-02 15:09:20,149 - ESP_Logger - INFO - tower data : [[['ESP0', 'FileNameA'], ['ESP1', 'FileNameB']], [['ESP0', 'FileNameA'], ['ESP1', 'FileNameB']], [['ALL', 'FileNameA']], [['EVEN', 'FileNameB'], ['ODD', 'FileNameA']]]
+2018-10-02 15:09:20,153 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:09:20,154 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:09:20,154 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:09:20,156 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:09:20,156 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:09:20,157 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:09:20,157 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:09:20,159 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:09:20,159 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:09:20,160 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:09:20,160 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:09:20,160 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:09:20,161 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:09:20,161 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:09:20,161 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:09:20,165 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:09:20,166 - ESP_Logger - INFO - get_ip started
+2018-10-02 15:09:29,293 - ESP_Logger - INFO - import_config started : config.yaml
+2018-10-02 15:09:29,301 - ESP_Logger - INFO - tower IPs and data array started
+2018-10-02 15:09:29,301 - ESP_Logger - INFO - tower ips : ['192.168.0.31', '192.168.0.32', '192.168.0.33', '192.168.0.34']
+2018-10-02 15:09:29,301 - ESP_Logger - INFO - tower data : [[['ESP0', 'FileNameA'], ['ESP1', 'FileNameB']], [['ESP0', 'FileNameA'], ['ESP1', 'FileNameB']], [['ALL', 'FileNameA']], [['EVEN', 'FileNameB'], ['ODD', 'FileNameA']]]
+2018-10-02 15:09:29,305 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:09:29,307 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:09:29,308 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:09:29,308 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:09:29,309 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:09:29,310 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:09:29,311 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:09:29,312 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:09:29,313 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:09:29,314 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:09:29,315 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:09:29,315 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:09:29,316 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:09:29,317 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:09:29,318 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:09:29,319 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:09:29,320 - ESP_Logger - INFO - get_ip started
+2018-10-02 15:11:22,560 - ESP_Logger - INFO - import_config started : config.yaml
+2018-10-02 15:11:22,573 - ESP_Logger - INFO - tower IPs and data array started
+2018-10-02 15:11:22,573 - ESP_Logger - INFO - tower ips : ['192.168.0.31', '192.168.0.32', '192.168.0.33', '192.168.0.34']
+2018-10-02 15:11:22,573 - ESP_Logger - INFO - tower data : [[['ESP0', 'FileNameA'], ['ESP1', 'FileNameB']], [['ESP0', 'FileNameA'], ['ESP1', 'FileNameB']], [['ALL', 'FileNameA']], [['EVEN', 'FileNameB'], ['ODD', 'FileNameA']]]
+2018-10-02 15:11:22,580 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:11:22,581 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:11:22,581 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:11:22,582 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:11:22,582 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:11:22,582 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:11:22,584 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:11:22,585 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:11:22,585 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:11:22,585 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:11:22,586 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:11:22,586 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:11:22,587 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:11:22,587 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:11:22,588 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:11:22,588 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:11:22,589 - ESP_Logger - INFO - get_ip started
+2018-10-02 15:11:22,591 - ESP_Logger - INFO - get_ip complete : 10.132.135.69
+2018-10-02 15:20:28,284 - ESP_Logger - INFO - import_config started : config.yaml
+2018-10-02 15:20:28,293 - ESP_Logger - INFO - tower IPs and data array started
+2018-10-02 15:20:28,294 - ESP_Logger - INFO - tower ips : ['192.168.0.31', '192.168.0.32', '192.168.0.33', '192.168.0.34']
+2018-10-02 15:20:28,295 - ESP_Logger - INFO - tower data : [[['ESP0', 'FileNameA'], ['ESP1', 'FileNameB']], [['ESP0', 'FileNameA'], ['ESP1', 'FileNameB']], [['ALL', 'FileNameA']], [['EVEN', 'FileNameB'], ['ODD', 'FileNameA']]]
+2018-10-02 15:20:28,298 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:20:28,301 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:20:28,304 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:20:28,305 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:20:28,305 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:20:28,306 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:20:28,306 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:20:28,307 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:20:28,307 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:20:28,309 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:20:28,309 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:20:28,310 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:20:28,310 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:20:28,311 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:20:28,311 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:20:28,312 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:20:28,313 - ESP_Logger - INFO - get_ip started
+2018-10-02 15:20:28,314 - ESP_Logger - INFO - get_ip complete : 10.132.135.69
+2018-10-02 15:27:37,329 - ESP_Logger - INFO - import_config started : config.yaml
+2018-10-02 15:27:37,335 - ESP_Logger - INFO - tower IPs and data array started
+2018-10-02 15:27:37,336 - ESP_Logger - INFO - tower ips : ['192.168.0.31', '192.168.0.32', '192.168.0.33', '192.168.0.34']
+2018-10-02 15:27:37,337 - ESP_Logger - INFO - tower data : [[['ESP0', 'FileNameA'], ['ESP1', 'FileNameB']], [['ESP0', 'FileNameA'], ['ESP1', 'FileNameB']], [['ALL', 'FileNameA']], [['EVEN', 'FileNameB'], ['ODD', 'FileNameA']]]
+2018-10-02 15:27:37,339 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:27:37,340 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:27:37,340 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:27:37,340 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:27:37,340 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:27:37,341 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:27:37,341 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:27:37,341 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:27:37,341 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:27:37,341 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:27:37,341 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:27:37,342 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:27:37,342 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:27:37,342 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:27:37,342 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:27:37,342 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:27:37,343 - ESP_Logger - INFO - get_ip started
+2018-10-02 15:27:37,344 - ESP_Logger - INFO - get_ip complete : 10.132.135.69
+2018-10-02 15:32:34,428 - ESP_Logger - INFO - import_config started : config.yaml
+2018-10-02 15:32:34,429 - ESP_Logger - INFO - tower IPs and data array started
+2018-10-02 15:32:34,429 - ESP_Logger - INFO - tower ips : ['192.168.0.31', '192.168.0.32', '192.168.0.33', '192.168.0.34']
+2018-10-02 15:32:34,429 - ESP_Logger - INFO - tower data : [[['ESP0', 'FileNameA'], ['ESP1', 'FileNameB']], [['ESP0', 'FileNameA'], ['ESP1', 'FileNameB']], [['ALL', 'FileNameA']], [['EVEN', 'FileNameB'], ['ODD', 'FileNameA']]]
+2018-10-02 15:32:34,435 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:32:34,436 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:32:34,436 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:32:34,437 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:32:34,438 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:32:34,438 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:32:34,438 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:32:34,439 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:32:34,439 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:32:34,439 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:32:34,440 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:32:34,440 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:32:34,440 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:32:34,441 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:32:34,441 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:32:34,441 - ESP_Logger - INFO - esp_selector started
+2018-10-02 15:32:34,442 - ESP_Logger - INFO - get_ip started
+2018-10-02 15:32:34,444 - ESP_Logger - INFO - get_ip complete : 10.132.135.69
