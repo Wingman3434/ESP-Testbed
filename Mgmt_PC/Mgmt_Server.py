@@ -28,10 +28,10 @@ def accept_incoming_connections():
 def handle_client(client):  # Takes client socket as argument.
     """Handles a single client connection."""
     name = client.recv(BUFSIZ).decode("utf8")
-    welcome = 'Welcome %s! If you ever want to quit, type {quit} to exit.' % name
-    client.send(bytes(welcome, "utf8"))
+    client.send(bytes('Welcome', "utf8"))
     msg = "%s has joined the chat!" % name
-    broadcast(bytes(msg, "utf8"))
+    print (msg)
+    #broadcast(bytes(msg, "utf8"))
     clients[client] = name
 
     while True:
