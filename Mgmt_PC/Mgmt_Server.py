@@ -42,10 +42,11 @@ def handle_client(client):  # Takes client socket as argument.
                 broadcast(bytes(command, "utf8"))
                 done = False
                 while done == False:
-                    if client.recv(BUFSIZ).decode("utf8") == 'Done!':
+                    msg = client.recv(BUFSIZ).decode("utf8")
+                    if msg == 'Done':
                         done == True
                     else:
-                        done == False
+                        continue
         # command = input("Enter Command")
         # broadcast(bytes(command, "utf8"))
         # USER_INPUT = Thread(target=user_input)
