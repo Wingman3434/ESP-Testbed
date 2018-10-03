@@ -417,3 +417,15 @@
 2018-10-04 00:25:02,037 - ESP_Logger - INFO - tower IPs and data array started
 2018-10-04 00:25:02,037 - ESP_Logger - INFO - tower ips : ['192.168.0.31', '192.168.0.32', '192.168.0.33', '192.168.0.34']
 2018-10-04 00:25:02,037 - ESP_Logger - INFO - tower data : [[['ESP0', 'FileNameA'], ['ESP1', 'FileNameB']], [['ESP0', 'FileNameA'], ['ESP1', 'FileNameB']], [['ALL', 'FileNameA']], [['EVEN', 'FileNameB'], ['ODD', 'FileNameA']]]
+2018-10-04 01:02:27,159 - ESP_Logger - INFO - import_config started : config.yaml
+2018-10-04 01:02:27,167 - ESP_Logger - INFO - tower IPs and data array started
+2018-10-04 01:02:27,168 - ESP_Logger - INFO - tower ips : ['192.168.0.31', '192.168.0.32', '192.168.0.33', '192.168.0.34']
+2018-10-04 01:02:27,168 - ESP_Logger - INFO - tower data : [[['ESP0', 'FileNameA'], ['ESP1', 'FileNameB']], [['ESP0', 'FileNameA'], ['ESP1', 'FileNameB']], [['ALL', 'FileNameA']], [['EVEN', 'FileNameB'], ['ODD', 'FileNameA']]]
+2018-10-04 01:08:38,507 - ESP_Logger - INFO - import_config started : config.yaml
+2018-10-04 01:08:38,511 - ESP_Logger - INFO - tower IPs and data array started
+2018-10-04 01:08:38,511 - ESP_Logger - INFO - tower ips : ['192.168.0.31', '192.168.0.32', '192.168.0.33', '192.168.0.34']
+2018-10-04 01:08:38,511 - ESP_Logger - INFO - tower data : [[['ESP0', 'FileNameA'], ['ESP1', 'FileNameB']], [['ESP0', 'FileNameA'], ['ESP1', 'FileNameB']], [['ALL', 'FileNameA']], [['EVEN', 'FileNameB'], ['ODD', 'FileNameA']]]
+2018-10-04 01:12:29,729 - ESP_Logger - INFO - import_config started : config.yaml
+2018-10-04 01:12:29,735 - ESP_Logger - INFO - tower IPs and data array started
+2018-10-04 01:12:29,735 - ESP_Logger - INFO - tower ips : ['192.168.0.50', '192.168.0.51']
+2018-10-04 01:12:29,735 - ESP_Logger - INFO - tower data : [[['ESP0', 'ATOK'], ['ESP1', 'SPAM'], ['ESP2', 'ATOK'], ['ESP3', 'SPAM'], ['ESP4', 'ATOK'], ['ESP5', 'SPAM'], ['ESP6', 'ATOK'], ['ESP7', 'SPAM'], ['ESP8', 'ATOK'], ['ESP9', 'SPAM'], ['ESP10', 'ATOK'], ['ESP11', 'SPAM'], ['ESP12', 'ATOK'], ['ESP13', 'SPAM'], ['ESP14', 'ATOK']], [['ESP0', 'ATOK'], ['ESP1', 'SPAM'], ['ESP2', 'ATOK'], ['ESP3', 'SPAM'], ['ESP4', 'ATOK'], ['ESP5', 'SPAM'], ['ESP6', 'ATOK'], ['ESP7', 'SPAM'], ['ESP8', 'ATOK'], ['ESP9', 'SPAM'], ['ESP10', 'ATOK'], ['ESP11', 'SPAM'], ['ESP12', 'ATOK'], ['ESP13', 'SPAM'], ['ESP14', 'ATOK']]]

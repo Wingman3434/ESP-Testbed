@@ -35,8 +35,10 @@ def handle_client(client):  # Takes client socket as argument.
     clients[client] = name
 
     while True:
-        USER_INPUT = Thread(target=user_input)
-        USER_INPUT.start()
+        command = input("Enter Command")
+        broadcast(bytes(command, "utf8"))
+        # USER_INPUT = Thread(target=user_input)
+        # USER_INPUT.start()
         # client.send(bytes("FOOOORRR LOOOPPPP", "utf8"))
         # msg = client.recv(BUFSIZ)
         # if msg != bytes("{quit}", "utf8"):

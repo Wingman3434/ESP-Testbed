@@ -120,7 +120,7 @@ def receive():
                 client_socket.send(my_name)
             elif my_name in msg:
                 command = msg.split(' ')
-                #temp_flash(1, serial_port, flash_location, file_location)
+                temp_flash(command[1], serial_port, flash_location, file_location)
                 print (command)
         except OSError:  # Possibly client has left the chat.
             break
