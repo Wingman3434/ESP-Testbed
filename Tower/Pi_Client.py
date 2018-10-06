@@ -4,7 +4,7 @@ if platform.system() != 'Windows':
     import serial
 from socket import socket, AF_INET, SOCK_STREAM, SOCK_DGRAM
 from threading import Thread
-import time, os, sys, select, logging, argparse
+import time, os, sys, select, logging, argparse, subprocess
 
 def get_ip():
     s = socket(AF_INET, SOCK_DGRAM)
@@ -87,8 +87,17 @@ def temp_flash(esp, port, location, file):
     reset_esp(0)
 
     #Flash ESP
-    command = esptool_path + ' --port ' + port + ' write_flash ' + location + ' ' + file
-    os.system(command)
+    command = []
+    command.append(esptool_path)
+    command.append('--port')
+    command.append(port)
+    command.append('write_flash')
+    command.append(location)
+    command.append(file)
+    flash_esp = subprocess.Popen(command,stdout=subprocess.PIPE)
+    flash_result = flash_esp.communicate()[0].decode('utf-8')
+    print(repr(flash_result))
+    #os.system(command)
 
     #Reset ESP to Boot Mode
     reset_esp(1)
@@ -123,7 +132,7 @@ def receive():
                     client_socket.send(my_name)
             elif my_name in msg:
                 command = msg.split(' ')
-                temp_flash(command[1], serial_port, flash_location, file_location)
+                temp_flash(command[1], serial_port, flash_location, command[2])
                 client_socket.send('Done')
                 print (command)
         except OSError:  # Possibly client has left the chat.
