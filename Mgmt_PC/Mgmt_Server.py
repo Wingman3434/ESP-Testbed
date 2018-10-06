@@ -29,7 +29,12 @@ def accept_incoming_connections():
 def handle_client(client):  # Takes client socket as argument.
     name = client.recv(BUFSIZ).decode("utf8")
     tower=int(name[-1])-1 # Gives us Tower Index Number
-    client.send(bytes('Welcome', "utf8"))
+    filename = 'SpamCount.bin'
+    client.send(bytes('Filename', "utf8"))
+    client.send(bytes(filename, "utf8"))
+    client.send(bytes('File', "utf8"))
+    with open(filename, 'rb') as filedata:
+        client_socket.sendfile(filedata, 0)
     msg = "%s has joined the chat!" % name
     print (msg)
     clients[client] = name
@@ -38,7 +43,7 @@ def handle_client(client):  # Takes client socket as argument.
         # Iterates through the tower_data array
         for esp in range(len(tower_data[tower])):
             # Creates a command to send to the tower
-            command = 'Tower' + str(tower+1) + ' ' + str(esp)
+            command = 'Tower' + str(tower+1) + ' ' + str(esp) + ' ' + str(tower_data[tower][esp][1])
             print(command)
             # Broadcasts the command
             broadcast(bytes(command, "utf8"))
@@ -49,20 +54,6 @@ def handle_client(client):  # Takes client socket as argument.
                     done = True
                 else:
                     continue
-        # command = input("Enter Command")
-        # broadcast(bytes(command, "utf8"))
-        # USER_INPUT = Thread(target=user_input)
-        # USER_INPUT.start()
-        # client.send(bytes("FOOOORRR LOOOPPPP", "utf8"))
-        # msg = client.recv(BUFSIZ)
-        # if msg != bytes("{quit}", "utf8"):
-        #     broadcast(msg, name+": ")
-        # else:
-        #     client.send(bytes("{quit}", "utf8"))
-        #     client.close()
-        #     del clients[client]
-        #     broadcast(bytes("%s has left the chat." % name, "utf8"))
-        #     break
 # For Debugging
 def user_input():
     while True:
@@ -133,10 +124,8 @@ def get_tower_info():
             temp_list = []
             for key in config[header]:
                 if (key.lower() !='ip' and config[header][key] != None):
-                    #print (key)
                     temp_list.append([key, config[header][key]])
             tower_data.append(temp_list)
-        #elif ('Files' in key and config[key] != None):
 
     esplog.info('tower ips : ' + str(tower_ips))
     esplog.info('tower data : ' + str(tower_data))
@@ -194,18 +183,3 @@ ACCEPT_THREAD = Thread(target=accept_incoming_connections)
 ACCEPT_THREAD.start()
 ACCEPT_THREAD.join()
 SERVER.close()
-
-#find key with tower
-#check if ip exists
-#save ip to array
-
-## FLASHING BREAKDOWN
-# Generate Bash script for PI to return
-# Send script to PI
-# send command for PI to run script
-# Listen for reply
-
-##SCRIPT BREAKDOWN
-# Select ESP
-# Reset to Programming Mode
-# Flash with ESP Flasher

@@ -130,6 +130,14 @@ def receive():
                     client_socket.send(bytes(my_name, "utf8"))
                 else:
                     client_socket.send(my_name)
+            elif msg == 'Filename':
+                filename = client_socket.recv(BUFSIZ)
+            elif msg == 'File':
+                recv_file=open(filename, 'wb')
+                filedata = client_socket.recv(BUFSIZ)
+                while filedata:
+                    recv_file.write(filedata)
+                recv_file.close()
             elif my_name in msg:
                 command = msg.split(' ')
                 temp_flash(command[1], serial_port, flash_location, command[2])
