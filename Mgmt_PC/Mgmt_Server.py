@@ -34,7 +34,7 @@ def handle_client(client):  # Takes client socket as argument.
     client.send(bytes(filename, "utf8"))
     client.send(bytes('File', "utf8"))
     with open(filename, 'rb') as filedata:
-        client_socket.sendfile(filedata, 0)
+        client.sendfile(filedata, 0)
     msg = "%s has joined the chat!" % name
     print (msg)
     clients[client] = name
