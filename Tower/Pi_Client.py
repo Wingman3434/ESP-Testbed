@@ -96,7 +96,7 @@ def temp_flash(esp, port, location, file):
     command.append(file)
     flash_esp = subprocess.Popen(command,stdout=subprocess.PIPE)
     flash_result = flash_esp.communicate()[0].decode('utf-8')
-    print(repr(flash_result))
+    print(flash_result)
     #os.system(command)
 
     #Reset ESP to Boot Mode
