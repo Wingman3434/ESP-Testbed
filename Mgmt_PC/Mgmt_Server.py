@@ -31,10 +31,12 @@ def handle_client(client):  # Takes client socket as argument.
     tower=int(name[-1])-1 # Gives us Tower Index Number
     filename = 'SpamCount.bin'
     client.send(bytes('Filename', "utf8"))
-    client.send(bytes(filename, "utf8"))
+    if client.recv(BUFSIZ).decode("utf8") == 'Send Filename':
+        client.send(bytes(filename, "utf8"))
     client.send(bytes('File', "utf8"))
-    with open(filename, 'rb') as filedata:
-        client.sendfile(filedata, 0)
+    if client.recv(BUFSIZ).decode("utf8") == 'Send File':
+        with open(filename, 'rb') as filedata:
+            client.sendfile(filedata, 0)
     msg = "%s has joined the chat!" % name
     print (msg)
     clients[client] = name

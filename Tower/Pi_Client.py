@@ -131,8 +131,10 @@ def receive():
                 else:
                     client_socket.send(my_name)
             elif msg == 'Filename':
+                client_socket.send('Send Filename')
                 filename = str(client_socket.recv(BUFSIZ).decode("utf8"))
             elif msg == 'File':
+                client_socket.send('Send File')
                 recv_file=open(filename, 'wb')
                 filedata = client_socket.recv(BUFSIZ)
                 while filedata:
