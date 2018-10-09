@@ -116,7 +116,7 @@ def temp_flash(esp, port, location, file):
 #Comms Functions
 def connect(ADDR):
     global CONNECTED 
-    while:
+    while True:
         if CONNECTED == False:
             try:
                 client_socket.connect(ADDR)
@@ -124,6 +124,8 @@ def connect(ADDR):
             except:
                 CONNECTED = False
                 print ('No Server Found!')
+        else:
+            continue
 
 def receive():
     global CONNECTED
