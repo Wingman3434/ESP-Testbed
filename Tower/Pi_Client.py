@@ -154,6 +154,7 @@ def receive():
                 client_socket.send('Done')
                 print (command)
         except:  # Possibly client has left the chat.
+            continue
 
 def send(message):  #Send Message
     """Handles sending of messages."""
