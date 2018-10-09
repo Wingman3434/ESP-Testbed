@@ -37,6 +37,7 @@ def handle_client(client):  # Takes client socket as argument.
     if client.recv(BUFSIZ).decode("utf8") == 'Send File':
         with open(filename, 'rb') as filedata:
             client.sendfile(filedata, 0)
+
     msg = "%s has joined the chat!" % name
     print (msg)
     clients[client] = name
@@ -56,29 +57,11 @@ def handle_client(client):  # Takes client socket as argument.
                     done = True
                 else:
                     continue
-# For Debugging
-def user_input():
-    while True:
-        command = input("Enter Command")
-        broadcast(bytes(command, "utf8"))
 
 # Broadcasts a message to all the clients
 def broadcast(msg, prefix=""):  # prefix is for name identification.
     for sock in clients:
         sock.send(bytes(prefix, "utf8")+msg)
-
-# In development
-def send_file(filename, buffer):
-    esplog.info('send_file started')
-    f = open(filename,'rb')
-    while True:
-        l = f.read(buffer)
-        while (l):
-            sock.send(l)
-            l = f.read(buffer)
-        if not l:
-            f.close()
-    esplog.info(filename + ' Sent!')
 
 # Creates an array to select esps. Used on the Pis
 def esp_selector(esp):
@@ -142,6 +125,8 @@ def get_tower_info():
             elif ('even' in esp[0].lower()):
                 print ('Make All Even ESPs Flash')
 
+#def get_file_list():
+ #   for filename in config['Files']
 # create logger with 'ESP Logger'
 esplog = logging.getLogger('ESP_Logger')
 esplog.setLevel(logging.DEBUG)

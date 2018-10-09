@@ -6,6 +6,8 @@ from socket import socket, AF_INET, SOCK_STREAM, SOCK_DGRAM
 from threading import Thread
 import time, os, sys, select, logging, argparse, subprocess
 
+CONNECTED = False
+
 def get_ip():
     s = socket(AF_INET, SOCK_DGRAM)
     try:
@@ -112,17 +114,20 @@ def temp_flash(esp, port, location, file):
     # esp_serial.close()
 
 #Comms Functions
-def connect(ADDR,CONNECTED):
+def connect(ADDR):
+    global CONNECTED 
     while CONNECTED==False:
         try:
             client_socket.connect(ADDR)
             CONNECTED = True
         except:
+            CONNECTED = False
             print ('No Server Found!')
 
 def receive():
+    global CONNECTED
     """Handles receiving of messages."""
-    while True:
+    while CONNECTED==True:
         try:
             msg = client_socket.recv(BUFSIZ).decode("utf8")
             if msg == 'Name?':
@@ -145,8 +150,8 @@ def receive():
                 temp_flash(command[1], serial_port, flash_location, command[2])
                 client_socket.send('Done')
                 print (command)
-        except OSError:  # Possibly client has left the chat.
-            break
+        except:  # Possibly client has left the chat.
+            CONNECTED = False
 
 def send(message):  #Send Message
     """Handles sending of messages."""
@@ -171,6 +176,24 @@ serial_port = '/dev/serial0'
 flash_location = '0x0'
 file_location = '/home/pi/SpamCount.bin'
 
+##Logging
+# create logger with 'ESP Logger'
+towerlog = logging.getLogger('Tower_Logger')
+towerlog.setLevel(logging.DEBUG)
+# create file handler which logs everything
+fh = logging.FileHandler('Tower_Log.log')
+fh.setLevel(logging.DEBUG)
+# create console handler with a higher log level
+ch = logging.StreamHandler()
+ch.setLevel(logging.ERROR)
+# create formatter and add it to the handlers
+formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+fh.setFormatter(formatter)
+ch.setFormatter(formatter)
+# add the handlers to the logger
+towerlog.addHandler(fh)
+towerlog.addHandler(ch)
+
 if platform.system() != 'Windows':
     #Setup GPIO
     GPIO_Setup()
@@ -194,14 +217,13 @@ if platform.system() != 'Windows':
 else:
     HOST = get_ip()
 PORT = 5000
-CONNECTED = False
 
 BUFSIZ = 1024
 ADDR = (HOST, PORT)
 
 client_socket = socket(AF_INET, SOCK_STREAM)
 
-connect_thread = Thread(target=connect(ADDR,CONNECTED))
+connect_thread = Thread(target=connect(ADDR))
 connect_thread.start()
 
 receive_thread = Thread(target=receive)
