@@ -116,13 +116,14 @@ def temp_flash(esp, port, location, file):
 #Comms Functions
 def connect(ADDR):
     global CONNECTED 
-    while CONNECTED==False:
-        try:
-            client_socket.connect(ADDR)
-            CONNECTED = True
-        except:
-            CONNECTED = False
-            print ('No Server Found!')
+    while:
+        if CONNECTED == False:
+            try:
+                client_socket.connect(ADDR)
+                CONNECTED = True
+            except:
+                CONNECTED = False
+                print ('No Server Found!')
 
 def receive():
     global CONNECTED
@@ -151,7 +152,6 @@ def receive():
                 client_socket.send('Done')
                 print (command)
         except:  # Possibly client has left the chat.
-            CONNECTED = False
 
 def send(message):  #Send Message
     """Handles sending of messages."""
