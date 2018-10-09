@@ -1,14 +1,12 @@
 import platform
-if platform.system() != 'Windows':
-    import RPi.GPIO as GPIO
-    import serial
+import RPi.GPIO as GPIO
+import serial
 from socket import socket, AF_INET, SOCK_STREAM, SOCK_DGRAM
 from threading import Thread
 import time, os, sys, select, logging, argparse, subprocess
 
-CONNECTED = False
-
 def get_ip():
+    towerlog.debug('get_ip() Started')
     s = socket(AF_INET, SOCK_DGRAM)
     try:
         # doesn't even have to be reachable
@@ -19,40 +17,33 @@ def get_ip():
     finally:
         s.close()
     return IP
+    towerlog.debug('get_ip(): ' + IP)
 
 #GPIO Functions
-
 def GPIO_Setup():
-
+    towerlog.debug('GPIO_Setup Started')
     GPIO.setmode(GPIO.BOARD)
     GPIO.setwarnings(False)
-
     GPIO.setup(S0,GPIO.OUT)
     GPIO.setup(S1,GPIO.OUT)
     GPIO.setup(S2,GPIO.OUT)
     GPIO.setup(S3,GPIO.OUT)
-
     GPIO.setup(GPIO0,GPIO.OUT)
     GPIO.setup(RST,GPIO.OUT)
-
+    towerlog.debug('GPIO_Setup Complete')
+    
 def GPIO_Default():
-
+    towerlog.debug('GPIO_Default Started')
     GPIO.output(S0,0)
     GPIO.output(S1,0)
     GPIO.output(S2,0)
     GPIO.output(S3,0)
-
     GPIO.output(GPIO0,1)
     GPIO.output(RST,1)
-
-def reset_esp(bootmode):
-    GPIO.output(GPIO0,bootmode)
-    GPIO.output(RST,0)
-    time.sleep(.5)
-    GPIO.output(RST,1)
-    time.sleep(.5)
-
+    towerlog.debug('GPIO_Default Complete')
+    
 def esp_selector(esp):
+    towerlog.debug('esp_selector Started')
     if int(esp) == 0:
         esp_binary = '0b0000'
     elif int(esp) == 1:
@@ -72,22 +63,34 @@ def esp_selector(esp):
     else:
         esp_binary = bin(int(esp))
     return [esp_binary[5], esp_binary[4], esp_binary[3], esp_binary[2]]
-
+    towerlog.debug('esp_selector Complete')
+      
 def select_esp(array):
+    towerlog.debug('select_esp Started')
     GPIO.output(S0,int(array[0]))
     GPIO.output(S1,int(array[1]))
     GPIO.output(S2,int(array[2]))
     GPIO.output(S3,int(array[3]))
+    towerlog.debug('select_esp Complete')
 
-def temp_flash(esp, port, location, file):
-    print ('Flashing ESP: ' + str(esp))
-
+def reset_esp(esp, bootmode):
+    towerlog.debug('reset_esp Started')
     #Select ESP
     select_esp(esp_selector(esp))
-
+    #Set GPIO Bootmode
+    GPIO.output(GPIO0,bootmode)
+    #Set RST LOW
+    GPIO.output(RST,0)
+    time.sleep(.5)
+    #Set RST HIGH
+    GPIO.output(RST,1)
+    time.sleep(.5)
+    towerlog.debug('reset_esp Complete')
+    
+def flash_esp(esp, port, location, file):
+    towerlog.info('Flashing ESP: ' + str(esp))
     #Reset ESP to Program Mode
-    reset_esp(0)
-
+    reset_esp(esp,0)
     #Flash ESP
     command = []
     command.append(esptool_path)
@@ -96,65 +99,66 @@ def temp_flash(esp, port, location, file):
     command.append('write_flash')
     command.append(location)
     command.append(file)
-    flash_esp = subprocess.Popen(command,stdout=subprocess.PIPE)
-    flash_result = flash_esp.communicate()[0].decode('utf-8')
-    print(flash_result)
-    #os.system(command)
-
-    #Reset ESP to Boot Mode
-    reset_esp(1)
-
-    #Read ESP Serial for 10 Lines
-    # esp_serial = serial.Serial('/dev/serial0','115200')
-    # for x in range(1,11):
-    #     try:
-    #         print (esp_serial.readline())
-    #     except SerialException:
-    #         print ('port already open')
-    # esp_serial.close()
-
-#Comms Functions
-def connect(ADDR):
-    global CONNECTED 
+    flash_shell = subprocess.Popen(command,stdout=subprocess.PIPE)
     while True:
-        if CONNECTED == False:
-            try:
-                client_socket.connect(ADDR)
-                CONNECTED = True
-            except:
-                CONNECTED = False
-                print ('No Server Found!')
+        cmd_output = flash_shell.stdout.readline().rstrip()
+        if cmd_output == '' and flash_shell.poll() is not None:
+            break
         else:
-            continue
+            towerlog.info(cmd_output)
+    #flash_result = flash_shell.communicate()[0].decode('utf-8')
+    #towerlog.info(flash_result)
+    #Reset ESP to Boot Mode
+    reset_esp(esp,1)
 
+###Comms Functions
+##def connect(ADDR):
+##    global conn
+##    try:
+##        client_socket.settimeout(2)
+##        client_socket.connect(ADDR)
+##        conn = True
+##    except OSError:
+##        print ('No Server Found!')
+            
 def receive():
-    global CONNECTED
+    global connected
     """Handles receiving of messages."""
-    while CONNECTED==True:
-        try:
-            msg = client_socket.recv(BUFSIZ).decode("utf8")
-            if msg == 'Name?':
-                if platform.system() == 'Windows':
-                    client_socket.send(bytes(my_name, "utf8"))
-                else:
-                    client_socket.send(my_name)
-            elif msg == 'Filename':
-                client_socket.send('Send Filename')
-                filename = str(client_socket.recv(BUFSIZ).decode("utf8"))
-            elif msg == 'File':
-                client_socket.send('Send File')
-                recv_file=open(filename, 'wb')
-                filedata = client_socket.recv(BUFSIZ)
-                while filedata:
-                    recv_file.write(filedata)
-                recv_file.close()
-            elif my_name in msg:
+    try:
+        msg = client_socket.recv(BUFSIZ).decode("utf8")
+        if msg == 'Name?':
+            client_socket.send(my_name)
+        elif msg == 'FILES!':
+            size = client_socket.recv(16)
+            if not size:
+                print ('File Size Error!')
+            size = int(size, 2)
+            filename = client_socket.recv(size)
+            filesize = client_socket.recv(32)
+            filesize = int(filesize, 2)
+            file_to_write = open(filename, 'wb')
+            chunksize = 4096
+            while filesize > 0:
+                if filesize < chunksize:
+                    chunksize = filesize
+                data = client_socket.recv(chunksize)
+                file_to_write.write(data)
+                filesize -= len(data)
+            file_to_write.close()
+            client_socket.send('Done')
+        elif my_name in msg:
+            if 'flash' in msg: # towerx flash 1 ATOK.bin
                 command = msg.split(' ')
-                temp_flash(command[1], serial_port, flash_location, command[2])
+                flash_esp(command[2], serial_port, flash_location, command[3])
                 client_socket.send('Done')
-                print (command)
-        except:  # Possibly client has left the chat.
-            continue
+            elif 'reboot' in msg: # towerx reboot 1
+                command = msg.split(' ')
+                reset_esp(command[2], 1)
+                client_socket.send('Done')
+    except:
+        connected = False
+        client_socket.close()
+        time.sleep(2)
 
 def send(message):  #Send Message
     """Handles sending of messages."""
@@ -177,7 +181,6 @@ RST = 40
 esptool_path = '/home/pi/esptool/esptool.py'
 serial_port = '/dev/serial0'
 flash_location = '0x0'
-file_location = '/home/pi/SpamCount.bin'
 
 ##Logging
 # create logger with 'ESP Logger'
@@ -188,46 +191,46 @@ fh = logging.FileHandler('Tower_Log.log')
 fh.setLevel(logging.DEBUG)
 # create console handler with a higher log level
 ch = logging.StreamHandler()
-ch.setLevel(logging.ERROR)
+ch.setLevel(logging.INFO)
 # create formatter and add it to the handlers
-formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
 fh.setFormatter(formatter)
 ch.setFormatter(formatter)
 # add the handlers to the logger
 towerlog.addHandler(fh)
 towerlog.addHandler(ch)
 
-if platform.system() != 'Windows':
-    #Setup GPIO
-    GPIO_Setup()
+#Setup GPIO
+GPIO_Setup()
 
-if platform.system() != 'Windows':
-    #Default GPIO Values
-    GPIO_Default()
+#Default GPIO Values
+GPIO_Default()
 
-#Select, Reset, Flash & Read ESP
-#temp_flash(1, serial_port, flash_location, file_location)
-#temp_flash(7, serial_port, flash_location, file_location)
-#temp_flash(10, serial_port, flash_location, file_location)
+#Parse Arguments
+parser = argparse.ArgumentParser()
+parser.add_argument("host", help="IP of the Mgmt PC")
+args = parser.parse_args()
 
-if platform.system() != 'Windows':
-    #Parse Arguments
-    parser = argparse.ArgumentParser()
-    parser.add_argument("host", help="IP of the Mgmt PC")
-    args = parser.parse_args()
-    print(args.host)
-    HOST = args.host
-else:
-    HOST = get_ip()
+connected = False
+
+HOST = args.host
 PORT = 5000
 
 BUFSIZ = 1024
 ADDR = (HOST, PORT)
 
-client_socket = socket(AF_INET, SOCK_STREAM)
-
-connect_thread = Thread(target=connect(ADDR))
-connect_thread.start()
-
-receive_thread = Thread(target=receive)
-receive_thread.start()
+while True:
+    while not connected:
+        try:
+            client_socket = socket(AF_INET, SOCK_STREAM)
+            towerlog.info('Attemting to connect to server')
+            client_socket.connect(ADDR)
+            connected = True
+            towerlog.info('Connected to host!')
+        except:
+            towerlog.info('Connection Timeout')
+            connected = False
+            time.sleep(2)
+    while connected:
+        receive()        
+client_socket.close()
