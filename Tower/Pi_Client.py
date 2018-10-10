@@ -106,6 +106,7 @@ def flash_esp(esp, port, location, file):
             break
         else:
             towerlog.info(cmd_output)
+            client_socket.send(cmd_output)
     #flash_result = flash_shell.communicate()[0].decode('utf-8')
     #towerlog.info(flash_result)
     #Reset ESP to Boot Mode

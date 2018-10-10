@@ -61,16 +61,16 @@ def handle_client(client):  # Takes client socket as argument.
             # Creates a command to send to the tower
             command = 'Tower' + str(tower+1) + ' flash ' + str(esp) + ' ' + str(files[tower_data[tower][esp][1]])
             mgmtlog.info(command)
-            # Broadcasts the command
-            # broadcast(bytes(command, "utf8"))
             # Send Command to client
             client.send(bytes(command,"utf8"))
             # Waits for Pi to respond before sending next command
             done = False
             while done == False:
-                if client.recv(BUFSIZ).decode("utf8") == 'Done':
+                reply = client.recv(BUFSIZ).decode("utf8")
+                if reply == 'Done':
                     done = True
                 else:
+                    mgmtlog.info(reply)
                     continue
         client.close()
 
