@@ -1,9 +1,9 @@
-# ESP-Testbed
+## Introduction
 
 The ESP8266 is a low-cost Wi-Fi microcontroller with full TCP/IP stack. Packaged into modules the ESP8266 is espically usefull in research and development projects, specifically in the area of home automation and the internet of things. The ESP-Testbed project was created to solve a problem 
 A Python based tool to flash and communicate with ESP-01 test-beds.
 
-## Intro
+## Software
 
 The ESP-01 Test-bed is a protype device built to power and flash (program) up to 15 ESP-01 modules. 
 
