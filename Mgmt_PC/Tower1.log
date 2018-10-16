@@ -32,3 +32,8 @@ ESP 10: Failure - Check Device
 ESP 11: Success
 ESP 12: Failure - Check Device
 ESP 13: Failure - Check Device
+ESP 0: Success
+ESP 3: Success
+ESP 7: Success
+ESP 10: Success
+ESP 13: Success

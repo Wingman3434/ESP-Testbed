@@ -123,7 +123,6 @@ def receive():
             file_to_write.close() # Write Data to new file
             client_socket.send('Done') # File Transfered
         elif msg == 'Flash':
-            client_socket.send('Send')
             size = client_socket.recv(32) # Command Size
             if not size:
                 towerlog.info('Flash Command Transfer Error!')

@@ -25,3 +25,8 @@ ESP 4: Failure - Check Device
 ESP 5: Success
 ESP 6: Failure - Check Device
 ESP 7: Failure - Check Device
+ESP 0: Success
+ESP 3: Success
+ESP 6: Success
+ESP 9: Failure - Check Device
+ESP 10: Success

@@ -1,122 +1,92 @@
-2018-10-16 20:03:57,864 - DEBUG - import_config Started
-2018-10-16 20:03:57,876 - DEBUG - tower IPs and data array started
-2018-10-16 20:03:57,876 - DEBUG - tower ips : ['192.168.0.100', '192.168.0.102', '192.168.0.103', '192.168.0.104', '192.168.0.105']
-2018-10-16 20:03:57,876 - DEBUG - tower data : [[['ESP0', 'SPAM'], ['ESP1', 'SPAM'], ['ESP2', 'SPAM'], ['ESP3', 'SPAM'], ['ESP4', 'SPAM'], ['ESP5', 'SPAM'], ['ESP6', 'SPAM'], ['ESP7', 'SPAM'], ['ESP8', 'SPAM'], ['ESP9', 'SPAM'], ['ESP10', 'SPAM'], ['ESP11', 'SPAM'], ['ESP12', 'SPAM'], ['ESP13', 'SPAM'], ['ESP14', 'SPAM']], [['ESP0', 'ATOK'], ['ESP1', 'ATOK'], ['ESP2', 'ATOK'], ['ESP3', 'ATOK'], ['ESP4', 'ATOK'], ['ESP5', 'ATOK'], ['ESP6', 'ATOK'], ['ESP7', 'ATOK'], ['ESP8', 'ATOK'], ['ESP9', 'ATOK'], ['ESP10', 'ATOK'], ['ESP11', 'ATOK'], ['ESP12', 'ATOK'], ['ESP13', 'ATOK'], ['ESP14', 'ATOK']], [['ESP0', 'SPAM'], ['ESP1', 'SPAM'], ['ESP2', 'SPAM'], ['ESP3', 'SPAM'], ['ESP4', 'SPAM'], ['ESP5', 'SPAM'], ['ESP6', 'SPAM'], ['ESP7', 'SPAM'], ['ESP8', 'SPAM'], ['ESP9', 'SPAM'], ['ESP10', 'SPAM'], ['ESP11', 'SPAM'], ['ESP12', 'SPAM'], ['ESP13', 'SPAM'], ['ESP14', 'SPAM']], [['ESP0', 'ATOK'], ['ESP1', 'ATOK'], ['ESP2', 'ATOK'], ['ESP3', 'ATOK'], ['ESP4', 'ATOK'], ['ESP5', 'ATOK'], ['ESP6', 'ATOK'], ['ESP7', 'ATOK'], ['ESP8', 'ATOK'], ['ESP9', 'ATOK'], ['ESP10', 'ATOK'], ['ESP11', 'ATOK'], ['ESP12', 'ATOK'], ['ESP13', 'ATOK'], ['ESP14', 'ATOK']], [['ESP0', 'ATOK'], ['ESP1', 'SPAM'], ['ESP2', 'ATOK'], ['ESP3', 'SPAM'], ['ESP4', 'ATOK'], ['ESP5', 'SPAM'], ['ESP6', 'ATOK'], ['ESP7', 'SPAM'], ['ESP8', 'ATOK'], ['ESP9', 'SPAM'], ['ESP10', 'ATOK'], ['ESP11', 'SPAM'], ['ESP12', 'ATOK'], ['ESP13', 'SPAM'], ['ESP14', 'ATOK']]]
-2018-10-16 20:03:57,877 - DEBUG - get_ip() Started
-2018-10-16 20:03:57,878 - INFO - Chat server started on port 5000
-2018-10-16 20:03:57,879 - INFO - Waiting for connection...
-2018-10-16 20:03:57,879 - DEBUG - accept_incoming_connections() Started
-2018-10-16 20:04:44,919 - INFO - 192.168.0.101:55512 has connected.
-2018-10-16 20:04:44,919 - DEBUG - handle_client(client) Started
-2018-10-16 20:04:44,919 - DEBUG - accept_incoming_connections() Started
-2018-10-16 20:04:44,921 - INFO - ATOK Sent
-2018-10-16 20:04:45,249 - INFO - SPAM Sent
-2018-10-16 20:04:45,274 - INFO - Tower1 flash 0 SpamCount.bin
-2018-10-16 20:04:46,897 - INFO - 192.168.0.102:40160 has connected.
-2018-10-16 20:04:46,898 - DEBUG - handle_client(client) Started
-2018-10-16 20:04:46,898 - DEBUG - accept_incoming_connections() Started
-2018-10-16 20:04:46,899 - INFO - ATOK Sent
-2018-10-16 20:04:47,224 - INFO - SPAM Sent
-2018-10-16 20:04:47,235 - INFO - Tower2 flash 0 ATOK.bin
-2018-10-16 20:04:47,631 - INFO - esptool.py v2.5.1
-2018-10-16 20:04:47,675 - INFO - Serial port /dev/serial0
-2018-10-16 20:04:47,945 - INFO - Connecting....
-2018-10-16 20:04:48,998 - INFO - Detecting chip type... ESP8266
-2018-10-16 20:04:49,038 - INFO - Chip is ESP8266EXFeatures: WiFiMAC: b4:e6:2d:1b:75:eeUploading stub...Running stub...Stub running...Configuring flash size...Auto-detected Flash size: 1MBFlash params set to 0x0020Compressed 253536 bytes to 184661...
-2018-10-16 20:04:49,591 - INFO - esptool.py v2.5.1
-2018-10-16 20:04:49,633 - INFO - Serial port /dev/serial0
-2018-10-16 20:04:49,905 - INFO - Connecting....
-2018-10-16 20:04:50,959 - INFO - Detecting chip type... ESP8266
-2018-10-16 20:04:50,999 - INFO - Chip is ESP8266EXFeatures: WiFiMAC: b4:e6:2d:23:b6:2aUploading stub...Running stub...Stub running...Configuring flash size...Auto-detected Flash size: 1MBFlash params set to 0x0020Compressed 520192 bytes to 231226...
-2018-10-16 20:05:12,427 - INFO - Writing at 0x00000000... (8 %)Writing at 0x00004000... (16 %)Writing at 0x00008000... (25 %)Writing at 0x0000c000... (33 %)Writing at 0x00010000... (41 %)Writing at 0x00014000... (50 %)Writing at 0x00018000... (58 %)Writing at 0x0001c000... (66 %)Writing at 0x00020000... (75 %)Writing at 0x00024000... (83 %)Writing at 0x00028000... (91 %)Writing at 0x0002c000... (100 %)Wrote 253536 bytes (184661 compressed) at 0x00000000 in 21.6 seconds (effective 93.8 kbit/s)...
-2018-10-16 20:05:12,433 - INFO - Tower1 flash 1 SpamCount.bin
-2018-10-16 20:05:12,434 - INFO - Hash of data verified.Leaving...Hard resetting via RTS pin...
-2018-10-16 20:05:14,443 - INFO - Done
-2018-10-16 20:05:14,456 - INFO - Tower1 flash 2 SpamCount.bin
-2018-10-16 20:05:16,816 - INFO - esptool.py v2.5.1
-2018-10-16 20:05:16,856 - INFO - Serial port /dev/serial0
-2018-10-16 20:05:17,130 - INFO - Connecting....
-2018-10-16 20:05:18,169 - INFO - Detecting chip type... ESP8266
-2018-10-16 20:05:18,210 - INFO - Chip is ESP8266EXFeatures: WiFiMAC: b4:e6:2d:1b:76:5bUploading stub...Running stub...Stub running...Configuring flash size...Auto-detected Flash size: 1MBFlash params set to 0x0020Compressed 253536 bytes to 184661...
-2018-10-16 20:05:30,599 - INFO - Writing at 0x00000000... (6 %)Writing at 0x00004000... (13 %)Writing at 0x00008000... (20 %)Writing at 0x0000c000... (26 %)Writing at 0x00010000... (33 %)Writing at 0x00014000... (40 %)Writing at 0x00018000... (46 %)Writing at 0x0001c000... (53 %)Writing at 0x00020000... (60 %)Writing at 0x00024000... (66 %)Writing at 0x00028000... (73 %)Writing at 0x0002c000... (80 %)Writing at 0x00030000... (86 %)Writing at 0x00034000... (93 %)Writing at 0x00038000... (100 %)Wrote 520192 bytes (231226 compressed) at 0x00000000 in 35.5 seconds (effective 117.3 kbit/s)...
-2018-10-16 20:05:30,610 - INFO - Tower2 flash 1 ATOK.bin
-2018-10-16 20:05:30,612 - INFO - A fatal error occurred: Timed out waiting for packet header
-2018-10-16 20:05:32,649 - INFO - Done
-2018-10-16 20:05:32,661 - INFO - Tower2 flash 2 ATOK.bin
-2018-10-16 20:05:34,984 - INFO - esptool.py v2.5.1
-2018-10-16 20:05:35,024 - INFO - Serial port /dev/serial0
-2018-10-16 20:05:35,298 - INFO - Connecting....
-2018-10-16 20:05:36,397 - INFO - Detecting chip type... ESP8266
-2018-10-16 20:05:36,438 - INFO - Chip is ESP8266EXFeatures: WiFiMAC: b4:e6:2d:23:af:08Uploading stub...Running stub...Stub running...Configuring flash size...Auto-detected Flash size: 1MBFlash params set to 0x0020Compressed 520192 bytes to 231226...
-2018-10-16 20:05:44,381 - INFO - Writing at 0x00000000... (8 %)Writing at 0x00004000... (16 %)Writing at 0x00008000... (25 %)Writing at 0x0000c000... (33 %)Writing at 0x00010000... (41 %)Writing at 0x00014000... (50 %)Writing at 0x00018000... (58 %)Writing at 0x0001c000... (66 %)Writing at 0x00020000... (75 %)Writing at 0x00024000... (83 %)Writing at 0x00028000... (91 %)Writing at 0x0002c000... (100 %)Wrote 253536 bytes (184661 compressed) at 0x00000000 in 24.1 seconds (effective 84.1 kbit/s)...
-2018-10-16 20:05:44,388 - INFO - Tower1 flash 3 SpamCount.bin
-2018-10-16 20:05:44,389 - INFO - Hash of data verified.Leaving...Hard resetting via RTS pin...
-2018-10-16 20:05:46,398 - INFO - Done
-2018-10-16 20:05:46,410 - INFO - Tower1 flash 4 SpamCount.bin
-2018-10-16 20:05:50,781 - INFO - Done
-2018-10-16 20:05:50,787 - INFO - Tower1 flash 5 SpamCount.bin
-2018-10-16 20:05:53,171 - INFO - esptool.py v2.5.1
-2018-10-16 20:05:53,212 - INFO - Serial port /dev/serial0
-2018-10-16 20:05:53,486 - INFO - Connecting....
-2018-10-16 20:05:54,572 - INFO - Detecting chip type... ESP8266
-2018-10-16 20:05:54,613 - INFO - Chip is ESP8266EXFeatures: WiFiMAC: b4:e6:2d:23:b2:56Uploading stub...Running stub...Stub running...Configuring flash size...Auto-detected Flash size: 1MBFlash params set to 0x0020Compressed 253536 bytes to 184661...
-2018-10-16 20:06:17,846 - INFO - Writing at 0x00000000... (6 %)Writing at 0x00004000... (13 %)Writing at 0x00008000... (20 %)Writing at 0x0000c000... (26 %)Writing at 0x00010000... (33 %)Writing at 0x00014000... (40 %)Writing at 0x00018000... (46 %)Writing at 0x0001c000... (53 %)Writing at 0x00020000... (60 %)Writing at 0x00024000... (66 %)Writing at 0x00028000... (73 %)Writing at 0x0002c000... (80 %)Writing at 0x00030000... (86 %)Writing at 0x00034000... (93 %)Writing at 0x00038000... (100 %)Wrote 520192 bytes (231226 compressed) at 0x00000000 in 37.3 seconds (effective 111.6 kbit/s)...
-2018-10-16 20:06:17,853 - INFO - Tower2 flash 3 ATOK.bin
-2018-10-16 20:06:17,855 - INFO - A fatal error occurred: Timed out waiting for packet header
-2018-10-16 20:06:19,281 - INFO - Writing at 0x00000000... (8 %)Writing at 0x00004000... (16 %)Writing at 0x00008000... (25 %)Writing at 0x0000c000... (33 %)Writing at 0x00010000... (41 %)Writing at 0x00014000... (50 %)Writing at 0x00018000... (58 %)Writing at 0x0001c000... (66 %)Writing at 0x00020000... (75 %)Writing at 0x00024000... (83 %)Writing at 0x00028000... (91 %)Writing at 0x0002c000... (100 %)Wrote 253536 bytes (184661 compressed) at 0x00000000 in 22.8 seconds (effective 89.1 kbit/s)...
-2018-10-16 20:06:19,288 - INFO - Tower1 flash 6 SpamCount.bin
-2018-10-16 20:06:19,289 - INFO - Hash of data verified.Leaving...Hard resetting via RTS pin...
-2018-10-16 20:06:19,896 - INFO - Done
-2018-10-16 20:06:19,903 - INFO - Tower2 flash 4 ATOK.bin
-2018-10-16 20:06:21,301 - INFO - Done
-2018-10-16 20:06:21,306 - INFO - Tower1 flash 7 SpamCount.bin
-2018-10-16 20:06:24,306 - INFO - Done
-2018-10-16 20:06:24,318 - INFO - Tower2 flash 5 ATOK.bin
-2018-10-16 20:06:25,691 - INFO - Done
-2018-10-16 20:06:25,697 - INFO - Tower1 flash 8 SpamCount.bin
-2018-10-16 20:06:26,681 - INFO - esptool.py v2.5.1
-2018-10-16 20:06:26,722 - INFO - Serial port /dev/serial0
-2018-10-16 20:06:26,996 - INFO - Connecting....
-2018-10-16 20:06:28,068 - INFO - Detecting chip type... ESP8266
-2018-10-16 20:06:28,075 - INFO - esptool.py v2.5.1
-2018-10-16 20:06:28,109 - INFO - Chip is ESP8266EXFeatures: WiFiMAC: b4:e6:2d:21:66:fcUploading stub...Running stub...Stub running...Configuring flash size...Auto-detected Flash size: 1MBFlash params set to 0x0020Compressed 520192 bytes to 231226...
-2018-10-16 20:06:28,115 - INFO - Serial port /dev/serial0
-2018-10-16 20:06:28,389 - INFO - Connecting....
-2018-10-16 20:06:29,468 - INFO - Detecting chip type... ESP8266
-2018-10-16 20:06:29,509 - INFO - Chip is ESP8266EXFeatures: WiFiMAC: b4:e6:2d:23:aa:35Uploading stub...Running stub...Stub running...Configuring flash size...Auto-detected Flash size: 1MBFlash params set to 0x0020Compressed 253536 bytes to 184661...
-2018-10-16 20:06:54,885 - INFO - Writing at 0x00000000... (8 %)Writing at 0x00004000... (16 %)Writing at 0x00008000... (25 %)Writing at 0x0000c000... (33 %)Writing at 0x00010000... (41 %)Writing at 0x00014000... (50 %)Writing at 0x00018000... (58 %)Writing at 0x0001c000... (66 %)Writing at 0x00020000... (75 %)Writing at 0x00024000... (83 %)Writing at 0x00028000... (91 %)Writing at 0x0002c000... (100 %)Wrote 253536 bytes (184661 compressed) at 0x00000000 in 23.4 seconds (effective 86.7 kbit/s)...
-2018-10-16 20:06:54,896 - INFO - Tower1 flash 9 SpamCount.bin
-2018-10-16 20:06:54,897 - INFO - Hash of data verified.Leaving...Hard resetting via RTS pin...
-2018-10-16 20:06:56,900 - INFO - Done
-2018-10-16 20:06:56,912 - INFO - Tower1 flash 10 SpamCount.bin
-2018-10-16 20:07:01,303 - INFO - Done
-2018-10-16 20:07:01,315 - INFO - Tower1 flash 11 SpamCount.bin
-2018-10-16 20:07:03,659 - INFO - esptool.py v2.5.1
-2018-10-16 20:07:03,700 - INFO - Serial port /dev/serial0
-2018-10-16 20:07:03,973 - INFO - Connecting....
-2018-10-16 20:07:05,017 - INFO - Detecting chip type... ESP8266
-2018-10-16 20:07:05,058 - INFO - Chip is ESP8266EXFeatures: WiFiMAC: b4:e6:2d:23:b4:7aUploading stub...Running stub...Stub running...Configuring flash size...Auto-detected Flash size: 1MBFlash params set to 0x0020Compressed 253536 bytes to 184661...
-2018-10-16 20:07:05,993 - INFO - Writing at 0x00000000... (6 %)Writing at 0x00004000... (13 %)Writing at 0x00008000... (20 %)Writing at 0x0000c000... (26 %)Writing at 0x00010000... (33 %)Writing at 0x00014000... (40 %)Writing at 0x00018000... (46 %)Writing at 0x0001c000... (53 %)Writing at 0x00020000... (60 %)Writing at 0x00024000... (66 %)Writing at 0x00028000... (73 %)Writing at 0x0002c000... (80 %)Writing at 0x00030000... (86 %)Writing at 0x00034000... (93 %)Writing at 0x00038000... (100 %)Wrote 520192 bytes (231226 compressed) at 0x00000000 in 33.8 seconds (effective 123.3 kbit/s)...
-2018-10-16 20:07:06,005 - INFO - Tower2 flash 6 ATOK.bin
-2018-10-16 20:07:06,007 - INFO - A fatal error occurred: Timed out waiting for packet header
-2018-10-16 20:07:08,038 - INFO - Done
-2018-10-16 20:07:08,048 - INFO - Tower2 flash 7 ATOK.bin
-2018-10-16 20:07:12,414 - INFO - Done
-2018-10-16 20:07:12,419 - INFO - Tower2 flash 8 ATOK.bin
-2018-10-16 20:07:14,783 - INFO - esptool.py v2.5.1
-2018-10-16 20:07:14,823 - INFO - Serial port /dev/serial0
-2018-10-16 20:07:15,098 - INFO - Connecting....
-2018-10-16 20:07:16,151 - INFO - Detecting chip type... ESP8266
-2018-10-16 20:07:16,191 - INFO - Chip is ESP8266EXFeatures: WiFiMAC: b4:e6:2d:1b:6a:53Uploading stub...Running stub...Stub running...Configuring flash size...Auto-detected Flash size: 1MBFlash params set to 0x0020Compressed 520192 bytes to 231226...
-2018-10-16 20:07:29,951 - INFO - Writing at 0x00000000... (8 %)Writing at 0x00004000... (16 %)Writing at 0x00008000... (25 %)Writing at 0x0000c000... (33 %)Writing at 0x00010000... (41 %)Writing at 0x00014000... (50 %)Writing at 0x00018000... (58 %)Writing at 0x0001c000... (66 %)Writing at 0x00020000... (75 %)Writing at 0x00024000... (83 %)Writing at 0x00028000... (91 %)Writing at 0x0002c000... (100 %)Wrote 253536 bytes (184661 compressed) at 0x00000000 in 23.0 seconds (effective 88.3 kbit/s)...
-2018-10-16 20:07:29,964 - INFO - Tower1 flash 12 SpamCount.bin
-2018-10-16 20:07:29,965 - INFO - Hash of data verified.Leaving...Hard resetting via RTS pin...
-2018-10-16 20:07:31,971 - INFO - Done
-2018-10-16 20:07:31,978 - INFO - Tower1 flash 13 SpamCount.bin
-2018-10-16 20:07:36,370 - INFO - Done
-2018-10-16 20:07:36,376 - INFO - Tower1 flash 14 SpamCount.bin
-2018-10-16 20:07:38,748 - INFO - esptool.py v2.5.1
-2018-10-16 20:07:38,789 - INFO - Serial port /dev/serial0
-2018-10-16 20:07:39,062 - INFO - Connecting....
-2018-10-16 20:07:40,106 - INFO - Detecting chip type... ESP8266
-2018-10-16 20:07:40,147 - INFO - Chip is ESP8266EXFeatures: WiFiMAC: b4:e6:2d:23:b2:69Uploading stub...Running stub...Stub running...Configuring flash size...Auto-detected Flash size: 1MBFlash params set to 0x0020Compressed 253536 bytes to 184661...
+2018-10-16 20:28:49,807 - DEBUG - import_config Started
+2018-10-16 20:28:49,820 - DEBUG - tower IPs and data array started
+2018-10-16 20:28:49,820 - DEBUG - tower ips : ['192.168.0.100', '192.168.0.102', '192.168.0.103', '192.168.0.104', '192.168.0.105']
+2018-10-16 20:28:49,820 - DEBUG - tower data : [[['ESP0', 'SPAM'], ['ESP1', 'SPAM'], ['ESP2', 'SPAM'], ['ESP3', 'SPAM'], ['ESP4', 'SPAM'], ['ESP5', 'SPAM'], ['ESP6', 'SPAM'], ['ESP7', 'SPAM'], ['ESP8', 'SPAM'], ['ESP9', 'SPAM'], ['ESP10', 'SPAM'], ['ESP11', 'SPAM'], ['ESP12', 'SPAM'], ['ESP13', 'SPAM'], ['ESP14', 'SPAM']], [['ESP0', 'ATOK'], ['ESP1', 'ATOK'], ['ESP2', 'ATOK'], ['ESP3', 'ATOK'], ['ESP4', 'ATOK'], ['ESP5', 'ATOK'], ['ESP6', 'ATOK'], ['ESP7', 'ATOK'], ['ESP8', 'ATOK'], ['ESP9', 'ATOK'], ['ESP10', 'ATOK'], ['ESP11', 'ATOK'], ['ESP12', 'ATOK'], ['ESP13', 'ATOK'], ['ESP14', 'ATOK']], [['ESP0', 'SPAM'], ['ESP1', 'SPAM'], ['ESP2', 'SPAM'], ['ESP3', 'SPAM'], ['ESP4', 'SPAM'], ['ESP5', 'SPAM'], ['ESP6', 'SPAM'], ['ESP7', 'SPAM'], ['ESP8', 'SPAM'], ['ESP9', 'SPAM'], ['ESP10', 'SPAM'], ['ESP11', 'SPAM'], ['ESP12', 'SPAM'], ['ESP13', 'SPAM'], ['ESP14', 'SPAM']], [['ESP0', 'ATOK'], ['ESP1', 'ATOK'], ['ESP2', 'ATOK'], ['ESP3', 'ATOK'], ['ESP4', 'ATOK'], ['ESP5', 'ATOK'], ['ESP6', 'ATOK'], ['ESP7', 'ATOK'], ['ESP8', 'ATOK'], ['ESP9', 'ATOK'], ['ESP10', 'ATOK'], ['ESP11', 'ATOK'], ['ESP12', 'ATOK'], ['ESP13', 'ATOK'], ['ESP14', 'ATOK']], [['ESP0', 'ATOK'], ['ESP1', 'SPAM'], ['ESP2', 'ATOK'], ['ESP3', 'SPAM'], ['ESP4', 'ATOK'], ['ESP5', 'SPAM'], ['ESP6', 'ATOK'], ['ESP7', 'SPAM'], ['ESP8', 'ATOK'], ['ESP9', 'SPAM'], ['ESP10', 'ATOK'], ['ESP11', 'SPAM'], ['ESP12', 'ATOK'], ['ESP13', 'SPAM'], ['ESP14', 'ATOK']]]
+2018-10-16 20:28:49,820 - DEBUG - get_ip() Started
+2018-10-16 20:28:49,821 - INFO - Chat server started on port 5000
+2018-10-16 20:28:49,822 - INFO - Waiting for connection...
+2018-10-16 20:28:49,823 - DEBUG - accept_incoming_connections() Started
+2018-10-16 20:29:11,286 - INFO - 192.168.0.101:47152 has connected.
+2018-10-16 20:29:11,287 - DEBUG - handle_client(client) Started
+2018-10-16 20:29:11,287 - DEBUG - accept_incoming_connections() Started
+2018-10-16 20:29:11,290 - INFO - ATOK Sent
+2018-10-16 20:29:11,623 - INFO - SPAM Sent
+2018-10-16 20:29:11,635 - INFO - Tower1 flash 0 SpamCount.bin
+2018-10-16 20:29:14,086 - INFO - esptool.py v2.5.1
+2018-10-16 20:29:14,127 - INFO - Serial port /dev/serial0
+2018-10-16 20:29:14,406 - INFO - Connecting....
+2018-10-16 20:29:15,463 - INFO - Detecting chip type... ESP8266
+2018-10-16 20:29:15,503 - INFO - Chip is ESP8266EXFeatures: WiFiMAC: b4:e6:2d:1b:75:eeUploading stub...Running stub...Stub running...Configuring flash size...Auto-detected Flash size: 1MBFlash params set to 0x0020Compressed 253536 bytes to 184661...
+2018-10-16 20:29:17,558 - INFO - 192.168.0.102:37218 has connected.
+2018-10-16 20:29:17,559 - DEBUG - handle_client(client) Started
+2018-10-16 20:29:17,560 - DEBUG - accept_incoming_connections() Started
+2018-10-16 20:29:17,563 - INFO - ATOK Sent
+2018-10-16 20:29:17,603 - INFO - SPAM Sent
+2018-10-16 20:29:17,615 - INFO - Tower2 flash 0 ATOK.bin
+2018-10-16 20:29:20,045 - INFO - esptool.py v2.5.1
+2018-10-16 20:29:20,086 - INFO - Serial port /dev/serial0
+2018-10-16 20:29:20,363 - INFO - Connecting....
+2018-10-16 20:29:21,420 - INFO - Detecting chip type... ESP8266
+2018-10-16 20:29:21,462 - INFO - Chip is ESP8266EXFeatures: WiFiMAC: b4:e6:2d:23:b6:2aUploading stub...Running stub...Stub running...Configuring flash size...Auto-detected Flash size: 1MBFlash params set to 0x0020Compressed 520192 bytes to 231226...
+2018-10-16 20:29:38,982 - INFO - Writing at 0x00000000... (8 %)Writing at 0x00004000... (16 %)Writing at 0x00008000... (25 %)Writing at 0x0000c000... (33 %)Writing at 0x00010000... (41 %)Writing at 0x00014000... (50 %)Writing at 0x00018000... (58 %)Writing at 0x0001c000... (66 %)Writing at 0x00020000... (75 %)Writing at 0x00024000... (83 %)Writing at 0x00028000... (91 %)Writing at 0x0002c000... (100 %)Wrote 253536 bytes (184661 compressed) at 0x00000000 in 21.7 seconds (effective 93.5 kbit/s)...
+2018-10-16 20:29:40,998 - INFO - Tower1 flash 3 SpamCount.bin
+2018-10-16 20:29:43,389 - INFO - esptool.py v2.5.1
+2018-10-16 20:29:43,429 - INFO - Serial port /dev/serial0
+2018-10-16 20:29:43,703 - INFO - Connecting....
+2018-10-16 20:29:44,774 - INFO - Detecting chip type... ESP8266
+2018-10-16 20:29:44,815 - INFO - Chip is ESP8266EXFeatures: WiFiMAC: b4:e6:2d:21:9c:1eUploading stub...Running stub...Stub running...Configuring flash size...Auto-detected Flash size: 1MBFlash params set to 0x0020Compressed 253536 bytes to 184661...
+2018-10-16 20:30:01,394 - INFO - Writing at 0x00000000... (6 %)Writing at 0x00004000... (13 %)Writing at 0x00008000... (20 %)Writing at 0x0000c000... (26 %)Writing at 0x00010000... (33 %)Writing at 0x00014000... (40 %)Writing at 0x00018000... (46 %)Writing at 0x0001c000... (53 %)Writing at 0x00020000... (60 %)Writing at 0x00024000... (66 %)Writing at 0x00028000... (73 %)Writing at 0x0002c000... (80 %)Writing at 0x00030000... (86 %)Writing at 0x00034000... (93 %)Writing at 0x00038000... (100 %)Wrote 520192 bytes (231226 compressed) at 0x00000000 in 35.8 seconds (effective 116.2 kbit/s)...
+2018-10-16 20:30:03,439 - INFO - Tower2 flash 3 ATOK.bin
+2018-10-16 20:30:05,830 - INFO - esptool.py v2.5.1
+2018-10-16 20:30:05,870 - INFO - Serial port /dev/serial0
+2018-10-16 20:30:06,144 - INFO - Connecting....
+2018-10-16 20:30:07,210 - INFO - Detecting chip type... ESP8266
+2018-10-16 20:30:07,250 - INFO - Chip is ESP8266EXFeatures: WiFiMAC: b4:e6:2d:23:aa:24Uploading stub...Running stub...Stub running...Configuring flash size...Auto-detected Flash size: 1MBFlash params set to 0x0020Compressed 520192 bytes to 231226...
+2018-10-16 20:30:11,188 - INFO - Writing at 0x00000000... (8 %)Writing at 0x00004000... (16 %)Writing at 0x00008000... (25 %)Writing at 0x0000c000... (33 %)Writing at 0x00010000... (41 %)Writing at 0x00014000... (50 %)Writing at 0x00018000... (58 %)Writing at 0x0001c000... (66 %)Writing at 0x00020000... (75 %)Writing at 0x00024000... (83 %)Writing at 0x00028000... (91 %)Writing at 0x0002c000... (100 %)Wrote 253536 bytes (184661 compressed) at 0x00000000 in 24.3 seconds (effective 83.5 kbit/s)...
+2018-10-16 20:30:13,205 - INFO - Tower1 flash 7 SpamCount.bin
+2018-10-16 20:30:15,607 - INFO - esptool.py v2.5.1
+2018-10-16 20:30:15,648 - INFO - Serial port /dev/serial0
+2018-10-16 20:30:15,920 - INFO - Connecting....
+2018-10-16 20:30:16,980 - INFO - Detecting chip type... ESP8266
+2018-10-16 20:30:17,020 - INFO - Chip is ESP8266EXFeatures: WiFiMAC: b4:e6:2d:23:aa:35Uploading stub...Running stub...Stub running...Configuring flash size...Auto-detected Flash size: 1MBFlash params set to 0x0020Compressed 253536 bytes to 184661...
+2018-10-16 20:30:42,617 - INFO - Writing at 0x00000000... (8 %)Writing at 0x00004000... (16 %)Writing at 0x00008000... (25 %)Writing at 0x0000c000... (33 %)Writing at 0x00010000... (41 %)Writing at 0x00014000... (50 %)Writing at 0x00018000... (58 %)Writing at 0x0001c000... (66 %)Writing at 0x00020000... (75 %)Writing at 0x00024000... (83 %)Writing at 0x00028000... (91 %)Writing at 0x0002c000... (100 %)Wrote 253536 bytes (184661 compressed) at 0x00000000 in 23.6 seconds (effective 86.0 kbit/s)...
+2018-10-16 20:30:44,642 - INFO - Tower1 flash 10 SpamCount.bin
+2018-10-16 20:30:45,380 - INFO - Writing at 0x00000000... (6 %)Writing at 0x00004000... (13 %)Writing at 0x00008000... (20 %)Writing at 0x0000c000... (26 %)Writing at 0x00010000... (33 %)Writing at 0x00014000... (40 %)Writing at 0x00018000... (46 %)Writing at 0x0001c000... (53 %)Writing at 0x00020000... (60 %)Writing at 0x00024000... (66 %)Writing at 0x00028000... (73 %)Writing at 0x0002c000... (80 %)Writing at 0x00030000... (86 %)Writing at 0x00034000... (93 %)Writing at 0x00038000... (100 %)Wrote 520192 bytes (231226 compressed) at 0x00000000 in 34.0 seconds (effective 122.4 kbit/s)...
+2018-10-16 20:30:47,062 - INFO - esptool.py v2.5.1
+2018-10-16 20:30:47,102 - INFO - Serial port /dev/serial0
+2018-10-16 20:30:47,376 - INFO - Connecting....
+2018-10-16 20:30:47,455 - INFO - Tower2 flash 6 ATOK.bin
+2018-10-16 20:30:48,416 - INFO - Detecting chip type... ESP8266
+2018-10-16 20:30:48,457 - INFO - Chip is ESP8266EXFeatures: WiFiMAC: b4:e6:2d:23:b4:7aUploading stub...Running stub...Stub running...Configuring flash size...Auto-detected Flash size: 1MBFlash params set to 0x0020Compressed 253536 bytes to 184661...
+2018-10-16 20:30:49,854 - INFO - esptool.py v2.5.1
+2018-10-16 20:30:49,895 - INFO - Serial port /dev/serial0
+2018-10-16 20:30:50,167 - INFO - Connecting....
+2018-10-16 20:30:51,238 - INFO - Detecting chip type... ESP8266
+2018-10-16 20:30:51,279 - INFO - Chip is ESP8266EXFeatures: WiFiMAC: b4:e6:2d:1b:76:95Uploading stub...Running stub...Stub running...Configuring flash size...Auto-detected Flash size: 1MBFlash params set to 0x0020Compressed 520192 bytes to 231226...
+2018-10-16 20:31:13,518 - INFO - Writing at 0x00000000... (8 %)Writing at 0x00004000... (16 %)Writing at 0x00008000... (25 %)Writing at 0x0000c000... (33 %)Writing at 0x00010000... (41 %)Writing at 0x00014000... (50 %)Writing at 0x00018000... (58 %)Writing at 0x0001c000... (66 %)Writing at 0x00020000... (75 %)Writing at 0x00024000... (83 %)Writing at 0x00028000... (91 %)Writing at 0x0002c000... (100 %)Wrote 253536 bytes (184661 compressed) at 0x00000000 in 23.1 seconds (effective 87.8 kbit/s)...
+2018-10-16 20:31:15,558 - INFO - Tower1 flash 13 SpamCount.bin
+2018-10-16 20:31:17,969 - INFO - esptool.py v2.5.1
+2018-10-16 20:31:18,009 - INFO - Serial port /dev/serial0
+2018-10-16 20:31:18,282 - INFO - Connecting....
+2018-10-16 20:31:19,366 - INFO - Detecting chip type... ESP8266
+2018-10-16 20:31:19,408 - INFO - Chip is ESP8266EXFeatures: WiFiMAC: b4:e6:2d:23:b2:69Uploading stub...Running stub...Stub running...Configuring flash size...Auto-detected Flash size: 1MBFlash params set to 0x0020Compressed 253536 bytes to 184661...
+2018-10-16 20:31:31,758 - INFO - Writing at 0x00000000... (6 %)Writing at 0x00004000... (13 %)Writing at 0x00008000... (20 %)Writing at 0x0000c000... (26 %)Writing at 0x00010000... (33 %)Writing at 0x00014000... (40 %)Writing at 0x00018000... (46 %)Writing at 0x0001c000... (53 %)Writing at 0x00020000... (60 %)Writing at 0x00024000... (66 %)Writing at 0x00028000... (73 %)Writing at 0x0002c000... (80 %)Writing at 0x00030000... (86 %)Writing at 0x00034000... (93 %)Writing at 0x00038000... (100 %)Wrote 520192 bytes (231226 compressed) at 0x00000000 in 36.4 seconds (effective 114.5 kbit/s)...
+2018-10-16 20:31:33,818 - INFO - Tower2 flash 9 ATOK.bin
+2018-10-16 20:31:36,238 - INFO - esptool.py v2.5.1
+2018-10-16 20:31:36,279 - INFO - Serial port /dev/serial0
+2018-10-16 20:31:49,925 - INFO - Writing at 0x00000000... (8 %)Writing at 0x00004000... (16 %)Writing at 0x00008000... (25 %)Writing at 0x0000c000... (33 %)Writing at 0x00010000... (41 %)Writing at 0x00014000... (50 %)Writing at 0x00018000... (58 %)Writing at 0x0001c000... (66 %)Writing at 0x00020000... (75 %)Writing at 0x00024000... (83 %)Writing at 0x00028000... (91 %)Writing at 0x0002c000... (100 %)Wrote 253536 bytes (184661 compressed) at 0x00000000 in 28.0 seconds (effective 72.4 kbit/s)...
+2018-10-16 20:31:53,981 - INFO - 192.168.0.101:47154 has connected.
+2018-10-16 20:31:53,983 - DEBUG - handle_client(client) Started
+2018-10-16 20:31:53,984 - DEBUG - accept_incoming_connections() Started
+2018-10-16 20:31:53,984 - INFO - Tower1 is Complete
+2018-10-16 20:31:56,962 - INFO - Connecting........_____....._____....._____....._____....._____....._____....._____
+2018-10-16 20:31:57,005 - INFO - A fatal error occurred: Failed to connect to Espressif device: Invalid head of packet (0x43)
+2018-10-16 20:31:59,020 - INFO - Done
+2018-10-16 20:31:59,092 - INFO - Tower2 flash 10 ATOK.bin
+2018-10-16 20:32:01,509 - INFO - esptool.py v2.5.1
+2018-10-16 20:32:01,551 - INFO - Serial port /dev/serial0
+2018-10-16 20:32:01,823 - INFO - Connecting....
+2018-10-16 20:32:02,905 - INFO - Detecting chip type... ESP8266
+2018-10-16 20:32:02,948 - INFO - Chip is ESP8266EXFeatures: WiFiMAC: b4:e6:2d:23:ab:d9Uploading stub...Running stub...Stub running...Configuring flash size...Auto-detected Flash size: 1MBFlash params set to 0x0020Compressed 520192 bytes to 231226...
+2018-10-16 20:32:42,153 - INFO - Writing at 0x00000000... (6 %)Writing at 0x00004000... (13 %)Writing at 0x00008000... (20 %)Writing at 0x0000c000... (26 %)Writing at 0x00010000... (33 %)Writing at 0x00014000... (40 %)Writing at 0x00018000... (46 %)Writing at 0x0001c000... (53 %)Writing at 0x00020000... (60 %)Writing at 0x00024000... (66 %)Writing at 0x00028000... (73 %)Writing at 0x0002c000... (80 %)Writing at 0x00030000... (86 %)Writing at 0x00034000... (93 %)Writing at 0x00038000... (100 %)Wrote 520192 bytes (231226 compressed) at 0x00000000 in 35.1 seconds (effective 118.6 kbit/s)...
+2018-10-16 20:32:44,225 - INFO - Tower2 flash 13 ATOK.bin
