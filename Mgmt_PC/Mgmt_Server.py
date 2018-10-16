@@ -77,7 +77,7 @@ def handle_client(client):  # Takes client socket as argument.
             client.send(bytes(command,"utf8"))
             mgmtlog.info(command)
             # Waits for Pi to respond before sending next command
-            result = 0 # 0=Flashing 1=Success 2=Failed
+            result = 0 # 0=Flashing 1=Success 2=Failed 3= Ready for Next
             while result == 0:
                 reply = client.recv(BUFSIZ).decode("utf8")
                 mgmtlog.info(reply)
@@ -85,11 +85,15 @@ def handle_client(client):  # Takes client socket as argument.
                     line = "ESP " + str(esp) + ": Success"
                     writeline_file(logname, line)
                     result = 1
+                    while result == 1:
+                        reply = client.recv(BUFSIZ).decode("utf8")
+                        mgmtlog.info(reply)
+                        if reply == 'Done':
+                            result = 3
                 elif reply == 'Done' and result == 0:
                     line = "ESP " + str(esp) + ": Failure - Check Device"
                     writeline_file(logname, line)
                     result = 2
-                time.sleep(.5)
         client.close()
 
 # Broadcasts a message to all the clients

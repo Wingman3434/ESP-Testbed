@@ -1,16 +1,19 @@
 ## Introduction
 
-The ESP8266 is a low-cost Wi-Fi microcontroller with full TCP/IP stack. Packaged into modules the ESP8266 is especially useful in research and development projects, specifically in the area of home automation and the Internet of Things. The ESP-Testbed was created to solve the problem of scalability in these IoT research projects. The concept of the ESP-Testbed is a highly scalable, low-cost prototyping system which allows researchers to test ESP8266 protocols and firmware on a large scale. The system is designed for the ESP-01 module, an 8-pin scaled down version of the full ESP8266 microcontroller.
+Despite decades of research, home automation has yet to make a significant impact on our everyday lives. Many researchers are developing protocols to remove the need for a central controller. These protocols are often developed for the ESP8266, a low-cost Wi-Fi microcontroller. It can be found on the ESP-01 development module, an 8-pin scaled down version of the full ESP8266 microcontroller. With a lack of an onboard serial controller and voltage regulator, the ESP-01 is difficult to program on a large scale. The ESP-Testbed was created to solve the problem of scalability in these IoT research projects. The concept of the ESP-Testbed is a highly scalable, low-cost prototyping system which allows researchers to test ESP8266 protocols and firmware on a large scale.
 
-A Python-based tool to flash and communicate with ESP-01 test-beds.
+## Key Features
+
+- Efficiently Flash many ESP-01 modules with any firmware
+- Power a full tower of 15 devices
+- Centrally manage a large number of ESP towers
+- Test WiFi interference in 3 dimensions
+- Communicate with a large number of ESP’s via serial
 
 ## Software
 
-The ESP-01 Test-bed is a prototype device built to power and flash (program) up to 15 ESP-01 modules. 
-
-The management software (Link) runs on the programmerâ€™s pc and controls the functions of each tower, this means the programmer isnâ€™t required to log into each PI to flash the ESPs. 
-
-The ESP-Tower controller runs the client software (Link) at boot up. Each Test-bed is controlled via a Raspberry Pi 3 Model B+ connected to the board via a 2 x 20 pin female header. These Raspberry Pis run Raspbian with some extras installed and some slight configuration changes, the wiki (Link) details how to set-up and configure a Raspberry PI for an ESP Test-bed.
+The ESP Testbed uses a client-server model via TCP sockets. The Raspberry Pi acts as the client, indefinitely attempting to connect to the server. The user starts the server, which accepts all client connection requests. The server imports data from the configuration file processes it and sends commands to the Raspberry Pi. The client is responsible for interfacing with the ESPs, it controls the Pi’s GPIO pins and serial communication. During programming, the Pi will send progress data back to the server, showing the user progress without the need to connect directly to the tower.
 
 ## Make or Buy
-We can build these for you...
+
+The ESP Testbed is a fully open source project, allowing you to download the required files and start building your own towers. This task can be a little daunting so the ESP Testbed team is happy to help. For a small fee, we can assemble, test and ship as many towers as you require.  
