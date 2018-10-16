@@ -34,6 +34,7 @@ def handle_client(client):  # Takes client socket as argument.
     name = client.recv(BUFSIZ).decode("utf8") # Name Response
     global completed_towers
     if name in completed_towers:
+        time.sleep(5)
         client.close()
     else:
         completed_towers.append(name)
