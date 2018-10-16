@@ -136,6 +136,7 @@ def receive():
         connected = False
         client_socket.close()
         time.sleep(2)
+        break
 
 def send(message):  #Send Message
     client_socket.send(bytes(message, "utf8"))
