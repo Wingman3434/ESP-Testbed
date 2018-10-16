@@ -34,8 +34,9 @@ def handle_client(client):  # Takes client socket as argument.
     name = client.recv(BUFSIZ).decode("utf8") # Name Response
     global completed_towers
     if name in completed_towers:
-        time.sleep(5)
-        client.close()
+        mgmtlog.info(name + " is Complete")
+        while 1:
+            continue
     else:
         completed_towers.append(name)
         logname = name + '.log'
@@ -66,27 +67,32 @@ def handle_client(client):  # Takes client socket as argument.
                     continue # Transfer next file
         # Iterates through the tower_data array
         for esp in range(len(tower_data[tower])):
-            # Creates a command to send to the tower
-            command = 'Tower' + str(tower+1) + ' flash ' + str(esp)
-            command += ' ' + str(files[tower_data[tower][esp][1]])
-            mgmtlog.info(command)
-            # Send Command to client
-            client.send(bytes(command,"utf8"))
-            # Waits for Pi to respond before sending next command
-            result = 0 # 0=Flashing 1=Success 2=Failed
-            while result == 0:
-                reply = client.recv(BUFSIZ).decode("utf8")
-                mgmtlog.info(reply)
-                if "seconds (effective" in reply and result == 0:
-                    line = "ESP " + str(esp) + ": Success"
-                    writeline_file(logname, line)
-                    result = 1
-                elif reply == 'Done' and result == 0:
-                    line = "ESP " + str(esp) + ": Failure - Check Device"
-                    writeline_file(logname, line)
-                    result = 2
-                else:
-                    continue
+            client.send(bytes('Flash',"utf8"))
+            if client.recv(BUFSIZ).decode("utf8") == 'Send':
+                # Creates a command to send to the tower
+                command = 'Tower' + str(tower+1) + ' flash ' + str(esp) + ' ' + str(files[tower_data[tower][esp][1]])
+                size = len(command)
+                size = bin(size)[2:].zfill(32) # encode command size as 32 bit binary
+                client.send(bytes(size,"utf8")) # Send command size
+                mgmtlog.info(command)
+                # Send Command to client
+                client.send(bytes(command,"utf8"))
+                command = ""
+                # Waits for Pi to respond before sending next command
+                result = 0 # 0=Flashing 1=Success 2=Failed
+                while result == 0:
+                    reply = client.recv(BUFSIZ).decode("utf8")
+                    mgmtlog.info(reply)
+                    if "seconds (effective" in reply and result == 0:
+                        line = "ESP " + str(esp) + ": Success"
+                        writeline_file(logname, line)
+                        result = 1
+                    elif reply == 'Done' and result == 0:
+                        line = "ESP " + str(esp) + ": Failure - Check Device"
+                        writeline_file(logname, line)
+                        result = 2
+                    else:
+                        continue
         client.close()
 
 # Broadcasts a message to all the clients

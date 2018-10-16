@@ -122,16 +122,16 @@ def receive():
                 filesize -= len(data)
             file_to_write.close() # Write Data to new file
             client_socket.send('Done') # File Transfered
-        elif my_name in msg:
-            if 'flash' in msg: # Recieved Flash Command
-                command = msg.split(' ')
-                flash_esp(command[2], serial_port, flash_location, command[3])
-                client_socket.send('Done')
-            ## Future works
-            elif 'reboot' in msg: # Recieved Reboot Command
-                command = msg.split(' ')
-                reset_esp(command[2], 1)
-                client_socket.send('Done')
+        elif msg == 'Flash':
+            client_socket.send('Send')
+            size = client_socket.recv(32) # Command Size
+            if not size:
+                towerlog.info('Flash Command Transfer Error!')
+            size = int(size, 2)
+            command = client_socket.recv(size) # Command
+            command = command.split(' ')
+            flash_esp(command[2], serial_port, flash_location, command[3])
+            client_socket.send('Done')
     except: # Connection Error
         connected = False
         client_socket.close()
