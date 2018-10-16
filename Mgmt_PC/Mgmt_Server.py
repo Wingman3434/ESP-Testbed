@@ -89,6 +89,7 @@ def handle_client(client):  # Takes client socket as argument.
                     line = "ESP " + str(esp) + ": Failure - Check Device"
                     writeline_file(logname, line)
                     result = 2
+                time.sleep(.5)
         client.close()
 
 # Broadcasts a message to all the clients

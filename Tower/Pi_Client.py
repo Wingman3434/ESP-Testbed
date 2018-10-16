@@ -130,6 +130,7 @@ def receive():
             command = client_socket.recv(size) # Command
             command = command.split(' ')
             flash_esp(command[2], serial_port, flash_location, command[3])
+            time.sleep(2)
             client_socket.send('Done')
     except: # Connection Error
         connected = False
