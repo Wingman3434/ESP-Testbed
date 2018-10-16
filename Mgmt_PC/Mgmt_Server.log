@@ -28,3 +28,168 @@
 2018-10-10 23:15:38,730 - INFO - ATOK Sent
 2018-10-10 23:15:39,089 - INFO - SPAM Sent
 2018-10-10 23:15:39,412 - INFO - Tower1 flash 0 ATOK.bin
+2018-10-10 23:25:52,738 - DEBUG - import_config started : config.yaml
+2018-10-10 23:25:52,749 - DEBUG - tower IPs and data array started
+2018-10-10 23:25:52,750 - DEBUG - tower ips : ['192.168.0.100', '192.168.0.102', '192.168.0.103', '192.168.0.104', '192.168.0.105']
+2018-10-10 23:25:52,750 - DEBUG - tower data : [[['ESP0', 'ATOK'], ['ESP1', 'SPAM'], ['ESP2', 'ATOK'], ['ESP3', 'SPAM'], ['ESP4', 'ATOK'], ['ESP5', 'SPAM'], ['ESP6', 'ATOK'], ['ESP7', 'SPAM'], ['ESP8', 'ATOK'], ['ESP9', 'SPAM'], ['ESP10', 'ATOK'], ['ESP11', 'SPAM'], ['ESP12', 'ATOK'], ['ESP13', 'SPAM'], ['ESP14', 'ATOK']], [['ESP0', 'ATOK'], ['ESP1', 'SPAM'], ['ESP2', 'ATOK'], ['ESP3', 'SPAM'], ['ESP4', 'ATOK'], ['ESP5', 'SPAM'], ['ESP6', 'ATOK'], ['ESP7', 'SPAM'], ['ESP8', 'ATOK'], ['ESP9', 'SPAM'], ['ESP10', 'ATOK'], ['ESP11', 'SPAM'], ['ESP12', 'ATOK'], ['ESP13', 'SPAM'], ['ESP14', 'ATOK']], [['ESP0', 'ATOK'], ['ESP1', 'SPAM'], ['ESP2', 'ATOK'], ['ESP3', 'SPAM'], ['ESP4', 'ATOK'], ['ESP5', 'SPAM'], ['ESP6', 'ATOK'], ['ESP7', 'SPAM'], ['ESP8', 'ATOK'], ['ESP9', 'SPAM'], ['ESP10', 'ATOK'], ['ESP11', 'SPAM'], ['ESP12', 'ATOK'], ['ESP13', 'SPAM'], ['ESP14', 'ATOK']], [['ESP0', 'ATOK'], ['ESP1', 'SPAM'], ['ESP2', 'ATOK'], ['ESP3', 'SPAM'], ['ESP4', 'ATOK'], ['ESP5', 'SPAM'], ['ESP6', 'ATOK'], ['ESP7', 'SPAM'], ['ESP8', 'ATOK'], ['ESP9', 'SPAM'], ['ESP10', 'ATOK'], ['ESP11', 'SPAM'], ['ESP12', 'ATOK'], ['ESP13', 'SPAM'], ['ESP14', 'ATOK']], [['ESP0', 'ATOK'], ['ESP1', 'SPAM'], ['ESP2', 'ATOK'], ['ESP3', 'SPAM'], ['ESP4', 'ATOK'], ['ESP5', 'SPAM'], ['ESP6', 'ATOK'], ['ESP7', 'SPAM'], ['ESP8', 'ATOK'], ['ESP9', 'SPAM'], ['ESP10', 'ATOK'], ['ESP11', 'SPAM'], ['ESP12', 'ATOK'], ['ESP13', 'SPAM'], ['ESP14', 'ATOK']]]
+2018-10-10 23:25:52,750 - DEBUG - get_ip() Started
+2018-10-10 23:25:52,752 - INFO - Chat server started on port 5000
+2018-10-10 23:25:52,752 - INFO - Waiting for connection...
+2018-10-10 23:25:52,753 - DEBUG - accept_incoming_connections() Started
+2018-10-10 23:25:52,934 - INFO - 192.168.0.101:52000 has connected.
+2018-10-10 23:25:52,937 - DEBUG - handle_client(client) Started
+2018-10-10 23:25:52,939 - INFO - ATOK Sent
+2018-10-10 23:25:53,260 - INFO - SPAM Sent
+2018-10-10 23:25:53,272 - INFO - Tower1 flash 0 ATOK.bin
+2018-10-10 23:25:54,652 - INFO - esptool.py v2.5.1
+2018-10-10 23:25:54,692 - INFO - Serial port /dev/serial0
+2018-10-10 23:25:54,966 - INFO - Connecting....
+2018-10-10 23:25:56,021 - INFO - Detecting chip type... ESP8266
+2018-10-10 23:25:56,062 - INFO - Chip is ESP8266EXFeatures: WiFiMAC: b4:e6:2d:1b:75:eeUploading stub...Running stub...Stub running...Configuring flash size...Auto-detected Flash size: 1MBFlash params set to 0x0020Compressed 520192 bytes to 231226...
+2018-10-10 23:26:33,385 - INFO - Writing at 0x00000000... (6 %)Writing at 0x00004000... (13 %)Writing at 0x00008000... (20 %)Writing at 0x0000c000... (26 %)Writing at 0x00010000... (33 %)Writing at 0x00014000... (40 %)Writing at 0x00018000... (46 %)Writing at 0x0001c000... (53 %)Writing at 0x00020000... (60 %)Writing at 0x00024000... (66 %)Writing at 0x00028000... (73 %)Writing at 0x0002c000... (80 %)Writing at 0x00030000... (86 %)Writing at 0x00034000... (93 %)Writing at 0x00038000... (100 %)Wrote 520192 bytes (231226 compressed) at 0x00000000 in 33.2 seconds (effective 125.4 kbit/s)...
+2018-10-10 23:26:33,427 - INFO - A fatal error occurred: Timed out waiting for packet header
+2018-10-10 23:26:34,446 - INFO - Tower1 flash 1 SpamCount.bin
+2018-10-10 23:26:35,806 - INFO - esptool.py v2.5.1
+2018-10-10 23:26:35,848 - INFO - Serial port /dev/serial0
+2018-10-10 23:26:36,121 - INFO - Connecting....
+2018-10-10 23:26:37,160 - INFO - Detecting chip type... ESP8266
+2018-10-10 23:26:37,201 - INFO - Chip is ESP8266EXFeatures: WiFiMAC: b4:e6:2d:1b:76:5bUploading stub...Running stub...Stub running...Configuring flash size...Auto-detected Flash size: 1MBFlash params set to 0x0020Compressed 253536 bytes to 184661...
+2018-10-10 23:27:03,359 - INFO - Writing at 0x00000000... (8 %)Writing at 0x00004000... (16 %)Writing at 0x00008000... (25 %)Writing at 0x0000c000... (33 %)Writing at 0x00010000... (41 %)Writing at 0x00014000... (50 %)Writing at 0x00018000... (58 %)Writing at 0x0001c000... (66 %)Writing at 0x00020000... (75 %)Writing at 0x00024000... (83 %)Writing at 0x00028000... (91 %)Writing at 0x0002c000... (100 %)Wrote 253536 bytes (184661 compressed) at 0x00000000 in 24.1 seconds (effective 84.2 kbit/s)...
+2018-10-10 23:27:03,400 - INFO - Hash of data verified.Leaving...Hard resetting via RTS pin...
+2018-10-11 14:13:54,938 - DEBUG - import_config started : config.yaml
+2018-10-11 14:13:54,954 - DEBUG - tower IPs and data array started
+2018-10-11 14:13:54,955 - DEBUG - tower ips : ['192.168.0.100', '192.168.0.102', '192.168.0.103', '192.168.0.104', '192.168.0.105']
+2018-10-11 14:13:54,955 - DEBUG - tower data : [[['ESP0', 'ATOK'], ['ESP1', 'SPAM'], ['ESP2', 'ATOK'], ['ESP3', 'SPAM'], ['ESP4', 'ATOK'], ['ESP5', 'SPAM'], ['ESP6', 'ATOK'], ['ESP7', 'SPAM'], ['ESP8', 'ATOK'], ['ESP9', 'SPAM'], ['ESP10', 'ATOK'], ['ESP11', 'SPAM'], ['ESP12', 'ATOK'], ['ESP13', 'SPAM'], ['ESP14', 'ATOK']], [['ESP0', 'ATOK'], ['ESP1', 'SPAM'], ['ESP2', 'ATOK'], ['ESP3', 'SPAM'], ['ESP4', 'ATOK'], ['ESP5', 'SPAM'], ['ESP6', 'ATOK'], ['ESP7', 'SPAM'], ['ESP8', 'ATOK'], ['ESP9', 'SPAM'], ['ESP10', 'ATOK'], ['ESP11', 'SPAM'], ['ESP12', 'ATOK'], ['ESP13', 'SPAM'], ['ESP14', 'ATOK']], [['ESP0', 'ATOK'], ['ESP1', 'SPAM'], ['ESP2', 'ATOK'], ['ESP3', 'SPAM'], ['ESP4', 'ATOK'], ['ESP5', 'SPAM'], ['ESP6', 'ATOK'], ['ESP7', 'SPAM'], ['ESP8', 'ATOK'], ['ESP9', 'SPAM'], ['ESP10', 'ATOK'], ['ESP11', 'SPAM'], ['ESP12', 'ATOK'], ['ESP13', 'SPAM'], ['ESP14', 'ATOK']], [['ESP0', 'ATOK'], ['ESP1', 'SPAM'], ['ESP2', 'ATOK'], ['ESP3', 'SPAM'], ['ESP4', 'ATOK'], ['ESP5', 'SPAM'], ['ESP6', 'ATOK'], ['ESP7', 'SPAM'], ['ESP8', 'ATOK'], ['ESP9', 'SPAM'], ['ESP10', 'ATOK'], ['ESP11', 'SPAM'], ['ESP12', 'ATOK'], ['ESP13', 'SPAM'], ['ESP14', 'ATOK']], [['ESP0', 'ATOK'], ['ESP1', 'SPAM'], ['ESP2', 'ATOK'], ['ESP3', 'SPAM'], ['ESP4', 'ATOK'], ['ESP5', 'SPAM'], ['ESP6', 'ATOK'], ['ESP7', 'SPAM'], ['ESP8', 'ATOK'], ['ESP9', 'SPAM'], ['ESP10', 'ATOK'], ['ESP11', 'SPAM'], ['ESP12', 'ATOK'], ['ESP13', 'SPAM'], ['ESP14', 'ATOK']]]
+2018-10-11 14:13:54,956 - DEBUG - get_ip() Started
+2018-10-11 14:13:54,957 - INFO - Chat server started on port 5000
+2018-10-11 14:13:54,957 - INFO - Waiting for connection...
+2018-10-11 14:13:54,960 - DEBUG - accept_incoming_connections() Started
+2018-10-11 14:13:57,340 - INFO - 192.168.0.101:43286 has connected.
+2018-10-11 14:13:57,340 - DEBUG - handle_client(client) Started
+2018-10-11 14:13:57,352 - INFO - ATOK Sent
+2018-10-11 14:13:57,715 - INFO - SPAM Sent
+2018-10-11 14:13:57,732 - INFO - Tower1 flash 0 ATOK.bin
+2018-10-11 14:13:59,155 - INFO - esptool.py v2.5.1
+2018-10-11 14:13:59,199 - INFO - Serial port /dev/serial0
+2018-10-11 14:13:59,476 - INFO - Connecting....
+2018-10-11 14:14:00,559 - INFO - Detecting chip type... ESP8266
+2018-10-11 14:14:00,600 - INFO - Chip is ESP8266EXFeatures: WiFiMAC: b4:e6:2d:1b:75:eeUploading stub...Running stub...Stub running...Configuring flash size...Auto-detected Flash size: 1MBFlash params set to 0x0020Compressed 520192 bytes to 231226...
+2018-10-11 14:14:37,526 - INFO - Writing at 0x00000000... (6 %)Writing at 0x00004000... (13 %)Writing at 0x00008000... (20 %)Writing at 0x0000c000... (26 %)Writing at 0x00010000... (33 %)Writing at 0x00014000... (40 %)Writing at 0x00018000... (46 %)Writing at 0x0001c000... (53 %)Writing at 0x00020000... (60 %)Writing at 0x00024000... (66 %)Writing at 0x00028000... (73 %)Writing at 0x0002c000... (80 %)Writing at 0x00030000... (86 %)Writing at 0x00034000... (93 %)Writing at 0x00038000... (100 %)Wrote 520192 bytes (231226 compressed) at 0x00000000 in 32.8 seconds (effective 126.9 kbit/s)...
+2018-10-11 14:14:37,566 - INFO - A fatal error occurred: Timed out waiting for packet header
+2018-10-11 14:14:38,575 - INFO - Tower1 flash 1 SpamCount.bin
+2018-10-11 14:14:39,932 - INFO - esptool.py v2.5.1
+2018-10-11 14:14:39,972 - INFO - Serial port /dev/serial0
+2018-10-11 14:14:40,246 - INFO - Connecting....
+2018-10-11 14:14:41,325 - INFO - Detecting chip type... ESP8266
+2018-10-11 14:14:41,365 - INFO - Chip is ESP8266EXFeatures: WiFiMAC: b4:e6:2d:1b:76:5bUploading stub...Running stub...Stub running...Configuring flash size...Auto-detected Flash size: 1MBFlash params set to 0x0020Compressed 253536 bytes to 184661...
+2018-10-11 14:15:07,803 - INFO - Writing at 0x00000000... (8 %)Writing at 0x00004000... (16 %)Writing at 0x00008000... (25 %)Writing at 0x0000c000... (33 %)Writing at 0x00010000... (41 %)Writing at 0x00014000... (50 %)Writing at 0x00018000... (58 %)Writing at 0x0001c000... (66 %)Writing at 0x00020000... (75 %)Writing at 0x00024000... (83 %)Writing at 0x00028000... (91 %)Writing at 0x0002c000... (100 %)Wrote 253536 bytes (184661 compressed) at 0x00000000 in 24.4 seconds (effective 83.3 kbit/s)...
+2018-10-11 14:15:07,844 - INFO - Hash of data verified.Leaving...Hard resetting via RTS pin...
+2018-10-11 14:15:08,821 - INFO - Tower1 flash 2 ATOK.bin
+2018-10-11 14:15:10,172 - INFO - esptool.py v2.5.1
+2018-10-11 14:15:10,214 - INFO - Serial port /dev/serial0
+2018-10-11 14:15:10,487 - INFO - Connecting....
+2018-10-11 14:15:11,533 - INFO - Detecting chip type... ESP8266
+2018-10-11 14:15:11,574 - INFO - Chip is ESP8266EXFeatures: WiFiMAC: b4:e6:2d:23:b2:faUploading stub...Running stub...Stub running...Configuring flash size...Auto-detected Flash size: 1MBFlash params set to 0x0020Compressed 520192 bytes to 231226...
+2018-10-11 14:15:53,841 - INFO - Writing at 0x00000000... (6 %)Writing at 0x00004000... (13 %)Writing at 0x00008000... (20 %)Writing at 0x0000c000... (26 %)Writing at 0x00010000... (33 %)Writing at 0x00014000... (40 %)Writing at 0x00018000... (46 %)Writing at 0x0001c000... (53 %)Writing at 0x00020000... (60 %)Writing at 0x00024000... (66 %)Writing at 0x00028000... (73 %)Writing at 0x0002c000... (80 %)Writing at 0x00030000... (86 %)Writing at 0x00034000... (93 %)Writing at 0x00038000... (100 %)Wrote 520192 bytes (231226 compressed) at 0x00000000 in 38.1 seconds (effective 109.1 kbit/s)...
+2018-10-11 14:15:53,881 - INFO - A fatal error occurred: Timed out waiting for packet header
+2018-10-11 14:15:54,885 - INFO - Tower1 flash 3 SpamCount.bin
+2018-10-11 14:15:56,230 - INFO - esptool.py v2.5.1
+2018-10-11 14:15:56,282 - INFO - Serial port /dev/serial0
+2018-10-11 14:15:56,543 - INFO - Connecting....
+2018-10-11 14:15:57,585 - INFO - Detecting chip type... ESP8266
+2018-10-11 14:15:57,627 - INFO - Chip is ESP8266EXFeatures: WiFiMAC: b4:e6:2d:1b:75:cbUploading stub...Running stub...Stub running...Configuring flash size...Auto-detected Flash size: 1MBFlash params set to 0x0020Compressed 253536 bytes to 184661...
+2018-10-11 14:16:21,587 - INFO - Writing at 0x00000000... (8 %)Writing at 0x00004000... (16 %)Writing at 0x00008000... (25 %)Writing at 0x0000c000... (33 %)Writing at 0x00010000... (41 %)Writing at 0x00014000... (50 %)Writing at 0x00018000... (58 %)Writing at 0x0001c000... (66 %)Writing at 0x00020000... (75 %)Writing at 0x00024000... (83 %)Writing at 0x00028000... (91 %)Writing at 0x0002c000... (100 %)Wrote 253536 bytes (184661 compressed) at 0x00000000 in 22.1 seconds (effective 91.7 kbit/s)...
+2018-10-11 14:16:21,628 - INFO - Hash of data verified.Leaving...Hard resetting via RTS pin...
+2018-10-11 14:16:22,624 - INFO - Tower1 flash 4 ATOK.bin
+2018-10-11 14:16:23,988 - INFO - esptool.py v2.5.1
+2018-10-11 14:16:24,029 - INFO - Serial port /dev/serial0
+2018-10-11 14:16:24,303 - INFO - Connecting....
+2018-10-11 14:16:25,363 - INFO - Detecting chip type... ESP8266
+2018-10-11 14:16:25,405 - INFO - Chip is ESP8266EXFeatures: WiFiMAC: b4:e6:2d:23:b2:56Uploading stub...Running stub...Stub running...Configuring flash size...Auto-detected Flash size: 1MBFlash params set to 0x0020Compressed 520192 bytes to 231226...
+2018-10-11 14:17:04,407 - INFO - Writing at 0x00000000... (6 %)Writing at 0x00004000... (13 %)Writing at 0x00008000... (20 %)Writing at 0x0000c000... (26 %)Writing at 0x00010000... (33 %)Writing at 0x00014000... (40 %)Writing at 0x00018000... (46 %)Writing at 0x0001c000... (53 %)Writing at 0x00020000... (60 %)Writing at 0x00024000... (66 %)Writing at 0x00028000... (73 %)Writing at 0x0002c000... (80 %)Writing at 0x00030000... (86 %)Writing at 0x00034000... (93 %)Writing at 0x00038000... (100 %)Wrote 520192 bytes (231226 compressed) at 0x00000000 in 34.9 seconds (effective 119.3 kbit/s)...
+2018-10-11 14:17:04,447 - INFO - A fatal error occurred: Timed out waiting for packet header
+2018-10-11 14:17:05,461 - INFO - Tower1 flash 5 SpamCount.bin
+2018-10-11 14:17:06,844 - INFO - esptool.py v2.5.1
+2018-10-11 14:17:06,889 - INFO - Serial port /dev/serial0
+2018-10-11 14:17:07,158 - INFO - Connecting....
+2018-10-11 14:17:08,186 - INFO - Detecting chip type... ESP8266
+2018-10-11 14:17:08,227 - INFO - Chip is ESP8266EXFeatures: WiFiMAC: b4:e6:2d:21:9c:1eUploading stub...Running stub...Stub running...Configuring flash size...Auto-detected Flash size: 1MBFlash params set to 0x0020Compressed 253536 bytes to 184661...
+2018-10-11 14:17:34,236 - INFO - Writing at 0x00000000... (8 %)Writing at 0x00004000... (16 %)Writing at 0x00008000... (25 %)Writing at 0x0000c000... (33 %)Writing at 0x00010000... (41 %)Writing at 0x00014000... (50 %)Writing at 0x00018000... (58 %)Writing at 0x0001c000... (66 %)Writing at 0x00020000... (75 %)Writing at 0x00024000... (83 %)Writing at 0x00028000... (91 %)Writing at 0x0002c000... (100 %)Wrote 253536 bytes (184661 compressed) at 0x00000000 in 24.0 seconds (effective 84.7 kbit/s)...
+2018-10-11 14:17:34,277 - INFO - Hash of data verified.Leaving...Hard resetting via RTS pin...
+2018-10-11 14:17:35,254 - INFO - Tower1 flash 6 ATOK.bin
+2018-10-11 14:17:36,627 - INFO - esptool.py v2.5.1
+2018-10-11 14:17:36,668 - INFO - Serial port /dev/serial0
+2018-10-11 14:17:36,941 - INFO - Connecting....
+2018-10-11 14:17:38,003 - INFO - Detecting chip type... ESP8266
+2018-10-11 14:17:38,044 - INFO - Chip is ESP8266EXFeatures: WiFiMAC: b4:e6:2d:23:ab:feUploading stub...Running stub...Stub running...Configuring flash size...Auto-detected Flash size: 1MBFlash params set to 0x0020Compressed 520192 bytes to 231226...
+2018-10-11 14:18:20,676 - INFO - Writing at 0x00000000... (6 %)Writing at 0x00004000... (13 %)Writing at 0x00008000... (20 %)Writing at 0x0000c000... (26 %)Writing at 0x00010000... (33 %)Writing at 0x00014000... (40 %)Writing at 0x00018000... (46 %)Writing at 0x0001c000... (53 %)Writing at 0x00020000... (60 %)Writing at 0x00024000... (66 %)Writing at 0x00028000... (73 %)Writing at 0x0002c000... (80 %)Writing at 0x00030000... (86 %)Writing at 0x00034000... (93 %)Writing at 0x00038000... (100 %)Wrote 520192 bytes (231226 compressed) at 0x00000000 in 38.5 seconds (effective 108.1 kbit/s)...
+2018-10-11 14:18:20,716 - INFO - A fatal error occurred: Timed out waiting for packet header
+2018-10-11 14:18:21,720 - INFO - Tower1 flash 7 SpamCount.bin
+2018-10-11 14:18:23,078 - INFO - esptool.py v2.5.1
+2018-10-11 14:18:23,118 - INFO - Serial port /dev/serial0
+2018-10-11 14:18:23,393 - INFO - Connecting....
+2018-10-11 14:18:24,435 - INFO - Detecting chip type... ESP8266
+2018-10-11 14:18:24,475 - INFO - Chip is ESP8266EXFeatures: WiFiMAC: b4:e6:2d:23:aa:35Uploading stub...Running stub...Stub running...Configuring flash size...Auto-detected Flash size: 1MBFlash params set to 0x0020Compressed 253536 bytes to 184661...
+2018-10-11 14:18:49,523 - INFO - Writing at 0x00000000... (8 %)Writing at 0x00004000... (16 %)Writing at 0x00008000... (25 %)Writing at 0x0000c000... (33 %)Writing at 0x00010000... (41 %)Writing at 0x00014000... (50 %)Writing at 0x00018000... (58 %)Writing at 0x0001c000... (66 %)Writing at 0x00020000... (75 %)Writing at 0x00024000... (83 %)Writing at 0x00028000... (91 %)Writing at 0x0002c000... (100 %)Wrote 253536 bytes (184661 compressed) at 0x00000000 in 23.1 seconds (effective 87.8 kbit/s)...
+2018-10-11 14:18:49,564 - INFO - Hash of data verified.Leaving...Hard resetting via RTS pin...
+2018-10-11 14:18:50,551 - INFO - Tower1 flash 8 ATOK.bin
+2018-10-11 14:18:51,904 - INFO - esptool.py v2.5.1
+2018-10-11 14:18:51,945 - INFO - Serial port /dev/serial0
+2018-10-11 14:18:52,219 - INFO - Connecting....
+2018-10-11 14:18:53,287 - INFO - Detecting chip type... ESP8266
+2018-10-11 14:18:53,328 - INFO - Chip is ESP8266EXFeatures: WiFiMAC: b4:e6:2d:1b:74:eeUploading stub...Running stub...Stub running...Configuring flash size...Auto-detected Flash size: 1MBFlash params set to 0x0020Compressed 520192 bytes to 231226...
+2018-10-11 14:19:33,566 - INFO - Writing at 0x00000000... (6 %)Writing at 0x00004000... (13 %)Writing at 0x00008000... (20 %)Writing at 0x0000c000... (26 %)Writing at 0x00010000... (33 %)Writing at 0x00014000... (40 %)Writing at 0x00018000... (46 %)Writing at 0x0001c000... (53 %)Writing at 0x00020000... (60 %)Writing at 0x00024000... (66 %)Writing at 0x00028000... (73 %)Writing at 0x0002c000... (80 %)Writing at 0x00030000... (86 %)Writing at 0x00034000... (93 %)Writing at 0x00038000... (100 %)Wrote 520192 bytes (231226 compressed) at 0x00000000 in 36.1 seconds (effective 115.3 kbit/s)...
+2018-10-11 14:19:33,606 - INFO - A fatal error occurred: Timed out waiting for packet header
+2018-10-11 14:19:34,611 - INFO - Tower1 flash 9 SpamCount.bin
+2018-10-11 14:19:35,945 - INFO - esptool.py v2.5.1
+2018-10-11 14:19:35,985 - INFO - Serial port /dev/serial0
+2018-10-11 14:19:36,261 - INFO - Connecting....
+2018-10-11 14:19:37,300 - INFO - Detecting chip type... ESP8266
+2018-10-11 14:19:37,340 - INFO - Chip is ESP8266EXFeatures: WiFiMAC: b4:e6:2d:23:b6:34Uploading stub...Running stub...Stub running...Configuring flash size...Auto-detected Flash size: 1MBFlash params set to 0x0020Compressed 253536 bytes to 184661...
+2018-10-11 14:20:04,472 - INFO - Writing at 0x00000000... (8 %)Writing at 0x00004000... (16 %)Writing at 0x00008000... (25 %)Writing at 0x0000c000... (33 %)Writing at 0x00010000... (41 %)Writing at 0x00014000... (50 %)Writing at 0x00018000... (58 %)Writing at 0x0001c000... (66 %)Writing at 0x00020000... (75 %)Writing at 0x00024000... (83 %)Writing at 0x00028000... (91 %)Writing at 0x0002c000... (100 %)Wrote 253536 bytes (184661 compressed) at 0x00000000 in 25.0 seconds (effective 81.2 kbit/s)...
+2018-10-11 14:20:04,513 - INFO - Hash of data verified.Leaving...Hard resetting via RTS pin...
+2018-10-11 14:20:05,519 - INFO - Tower1 flash 10 ATOK.bin
+2018-10-11 14:20:06,878 - INFO - esptool.py v2.5.1
+2018-10-11 14:20:06,919 - INFO - Serial port /dev/serial0
+2018-10-11 14:20:07,192 - INFO - Connecting....
+2018-10-11 14:20:11,278 - INFO - Detecting chip type... ESP8266
+2018-10-11 14:20:11,319 - INFO - Chip is ESP8266EXFeatures: WiFiMAC: b4:e6:2d:23:b4:7aUploading stub...Running stub...Stub running...Configuring flash size...Warning: Could not auto-detect Flash size (FlashID=0xffffff, SizeID=0xff), defaulting to 4MBFlash params set to 0x0040Compressed 520192 bytes to 231226...A fatal error occurred: Timed out waiting for packet content
+2018-10-11 14:20:12,342 - INFO - Tower1 flash 11 SpamCount.bin
+2018-10-11 14:20:13,703 - INFO - esptool.py v2.5.1
+2018-10-11 14:20:13,745 - INFO - Serial port /dev/serial0
+2018-10-11 14:20:14,017 - INFO - Connecting....
+2018-10-11 14:20:15,082 - INFO - Detecting chip type... ESP8266
+2018-10-11 14:20:15,122 - INFO - Chip is ESP8266EXFeatures: WiFiMAC: b4:e6:2d:23:a9:c4Uploading stub...Running stub...Stub running...Configuring flash size...Auto-detected Flash size: 1MBFlash params set to 0x0020Compressed 253536 bytes to 184661...
+2018-10-11 14:20:41,788 - INFO - Writing at 0x00000000... (8 %)Writing at 0x00004000... (16 %)Writing at 0x00008000... (25 %)Writing at 0x0000c000... (33 %)Writing at 0x00010000... (41 %)Writing at 0x00014000... (50 %)Writing at 0x00018000... (58 %)Writing at 0x0001c000... (66 %)Writing at 0x00020000... (75 %)Writing at 0x00024000... (83 %)Writing at 0x00028000... (91 %)Writing at 0x0002c000... (100 %)Wrote 253536 bytes (184661 compressed) at 0x00000000 in 24.6 seconds (effective 82.6 kbit/s)...
+2018-10-11 14:20:41,832 - INFO - Hash of data verified.Leaving...Hard resetting via RTS pin...
+2018-10-11 14:20:42,810 - INFO - Tower1 flash 12 ATOK.bin
+2018-10-11 14:20:44,181 - INFO - esptool.py v2.5.1
+2018-10-11 14:20:44,222 - INFO - Serial port /dev/serial0
+2018-10-11 14:20:44,496 - INFO - Connecting....
+2018-10-11 14:20:45,568 - INFO - Detecting chip type... ESP8266
+2018-10-11 14:20:45,608 - INFO - Chip is ESP8266EXFeatures: WiFiMAC: b4:e6:2d:21:9e:e1Uploading stub...Running stub...Stub running...Configuring flash size...Auto-detected Flash size: 1MBFlash params set to 0x0020Compressed 520192 bytes to 231226...
+2018-10-11 14:21:24,772 - INFO - Writing at 0x00000000... (6 %)Writing at 0x00004000... (13 %)Writing at 0x00008000... (20 %)Writing at 0x0000c000... (26 %)Writing at 0x00010000... (33 %)Writing at 0x00014000... (40 %)Writing at 0x00018000... (46 %)Writing at 0x0001c000... (53 %)Writing at 0x00020000... (60 %)Writing at 0x00024000... (66 %)Writing at 0x00028000... (73 %)Writing at 0x0002c000... (80 %)Writing at 0x00030000... (86 %)Writing at 0x00034000... (93 %)Writing at 0x00038000... (100 %)Wrote 520192 bytes (231226 compressed) at 0x00000000 in 35.0 seconds (effective 118.8 kbit/s)...
+2018-10-11 14:21:24,812 - INFO - A fatal error occurred: Timed out waiting for packet header
+2018-10-11 14:21:25,881 - INFO - Tower1 flash 13 SpamCount.bin
+2018-10-11 14:21:27,235 - INFO - esptool.py v2.5.1
+2018-10-11 14:21:27,276 - INFO - Serial port /dev/serial0
+2018-10-11 14:21:27,549 - INFO - Connecting....
+2018-10-11 14:21:28,580 - INFO - Detecting chip type... ESP8266
+2018-10-11 14:21:28,620 - INFO - Chip is ESP8266EXFeatures: WiFiMAC: b4:e6:2d:23:b2:69Uploading stub...Running stub...Stub running...Configuring flash size...Auto-detected Flash size: 1MBFlash params set to 0x0020Compressed 253536 bytes to 184661...
+2018-10-11 14:21:58,720 - INFO - Writing at 0x00000000... (8 %)Writing at 0x00004000... (16 %)Writing at 0x00008000... (25 %)Writing at 0x0000c000... (33 %)Writing at 0x00010000... (41 %)Writing at 0x00014000... (50 %)Writing at 0x00018000... (58 %)Writing at 0x0001c000... (66 %)Writing at 0x00020000... (75 %)Writing at 0x00024000... (83 %)Writing at 0x00028000... (91 %)Writing at 0x0002c000... (100 %)Wrote 253536 bytes (184661 compressed) at 0x00000000 in 27.6 seconds (effective 73.4 kbit/s)...
+2018-10-11 14:21:58,760 - INFO - Hash of data verified.Leaving...Hard resetting via RTS pin...
+2018-10-11 14:21:59,748 - INFO - Tower1 flash 14 ATOK.bin
+2018-10-11 14:22:01,123 - INFO - esptool.py v2.5.1
+2018-10-11 14:22:01,171 - INFO - Serial port /dev/serial0
+2018-10-11 14:22:01,437 - INFO - Connecting....
+2018-10-11 14:22:05,500 - INFO - Detecting chip type... ESP8266
+2018-10-11 14:22:05,541 - INFO - Chip is ESP8266EXFeatures: WiFiMAC: b4:e6:2d:21:61:d4Uploading stub...Running stub...Stub running...Configuring flash size...Warning: Could not auto-detect Flash size (FlashID=0xffffff, SizeID=0xff), defaulting to 4MBFlash params set to 0x0040Compressed 520192 bytes to 231226...A fatal error occurred: Timed out waiting for packet content
+2018-10-11 14:22:06,551 - INFO - Tower1 flash 0 ATOK.bin
+2018-10-13 22:57:51,942 - DEBUG - import_config started : config.yaml
+2018-10-13 22:57:51,958 - DEBUG - tower IPs and data array started
+2018-10-13 22:57:51,958 - DEBUG - tower ips : ['192.168.0.100', '192.168.0.102', '192.168.0.103', '192.168.0.104', '192.168.0.105']
+2018-10-13 22:57:51,959 - DEBUG - tower data : [[['ESP0', 'ATOK'], ['ESP1', 'SPAM'], ['ESP2', 'ATOK'], ['ESP3', 'SPAM'], ['ESP4', 'ATOK'], ['ESP5', 'SPAM'], ['ESP6', 'ATOK'], ['ESP7', 'SPAM'], ['ESP8', 'ATOK'], ['ESP9', 'SPAM'], ['ESP10', 'ATOK'], ['ESP11', 'SPAM'], ['ESP12', 'ATOK'], ['ESP13', 'SPAM'], ['ESP14', 'ATOK']], [['ESP0', 'ATOK'], ['ESP1', 'SPAM'], ['ESP2', 'ATOK'], ['ESP3', 'SPAM'], ['ESP4', 'ATOK'], ['ESP5', 'SPAM'], ['ESP6', 'ATOK'], ['ESP7', 'SPAM'], ['ESP8', 'ATOK'], ['ESP9', 'SPAM'], ['ESP10', 'ATOK'], ['ESP11', 'SPAM'], ['ESP12', 'ATOK'], ['ESP13', 'SPAM'], ['ESP14', 'ATOK']], [['ESP0', 'ATOK'], ['ESP1', 'SPAM'], ['ESP2', 'ATOK'], ['ESP3', 'SPAM'], ['ESP4', 'ATOK'], ['ESP5', 'SPAM'], ['ESP6', 'ATOK'], ['ESP7', 'SPAM'], ['ESP8', 'ATOK'], ['ESP9', 'SPAM'], ['ESP10', 'ATOK'], ['ESP11', 'SPAM'], ['ESP12', 'ATOK'], ['ESP13', 'SPAM'], ['ESP14', 'ATOK']], [['ESP0', 'ATOK'], ['ESP1', 'SPAM'], ['ESP2', 'ATOK'], ['ESP3', 'SPAM'], ['ESP4', 'ATOK'], ['ESP5', 'SPAM'], ['ESP6', 'ATOK'], ['ESP7', 'SPAM'], ['ESP8', 'ATOK'], ['ESP9', 'SPAM'], ['ESP10', 'ATOK'], ['ESP11', 'SPAM'], ['ESP12', 'ATOK'], ['ESP13', 'SPAM'], ['ESP14', 'ATOK']], [['ESP0', 'ATOK'], ['ESP1', 'SPAM'], ['ESP2', 'ATOK'], ['ESP3', 'SPAM'], ['ESP4', 'ATOK'], ['ESP5', 'SPAM'], ['ESP6', 'ATOK'], ['ESP7', 'SPAM'], ['ESP8', 'ATOK'], ['ESP9', 'SPAM'], ['ESP10', 'ATOK'], ['ESP11', 'SPAM'], ['ESP12', 'ATOK'], ['ESP13', 'SPAM'], ['ESP14', 'ATOK']]]
+2018-10-13 22:57:51,959 - DEBUG - get_ip() Started
+2018-10-13 22:57:51,960 - INFO - Chat server started on port 5000
+2018-10-13 22:57:51,961 - INFO - Waiting for connection...
+2018-10-13 22:57:51,962 - DEBUG - accept_incoming_connections() Started

@@ -1,6 +1,6 @@
 from socket import socket, AF_INET, SOCK_STREAM, SOCK_DGRAM
 from threading import Thread
-import yaml, select, logging, signal, time, os
+import yaml, select, logging, signal, time, os, re, argparse
 from collections import OrderedDict
 
 # Gets the IP of the device its running on. Mainly used for debugging
@@ -21,56 +21,62 @@ def get_ip():
 #Sets up handling for incoming clients
 def accept_incoming_connections():
     mgmtlog.debug('accept_incoming_connections() Started')
-    while True:
-        client, client_address = SERVER.accept()
-        mgmtlog.info("%s:%s has connected." % client_address)
-        client.send(bytes("Name?", "utf8"))
-        addresses[client] = client_address
-        Thread(target=handle_client, args=(client,)).start()
+    client, client_address = SERVER.accept() # Accept Client Connection Request
+    mgmtlog.info("%s:%s has connected." % client_address)
+    addresses[client] = client_address # Add client to addresses list
+    Thread(target=handle_client, args=(client,)).start() # Start new thread
 
 #Handles a single client connection
 def handle_client(client):  # Takes client socket as argument.
     mgmtlog.debug('handle_client(client) Started')
-    name = client.recv(BUFSIZ).decode("utf8")
-    tower=int(name[-1])-1 # Gives us Tower Index Number
-    clients[client] = name
+    client.send(bytes("Name?", "utf8")) # Name Request
+    name = client.recv(BUFSIZ).decode("utf8") # Name Response
+    tower=int(re.search(r'\d+', name).group())-1 # Gives us Tower Index Number
+    clients[client] = name # Add client to clients list
+    # Transfer files listed in the configuration YAML
     for file in files:
-        client.send(bytes('FILES!',"utf8"))
+        client.send(bytes('FILES!',"utf8")) # File Transfer Request
         filename = files[file]
         size = len(filename)
         size = bin(size)[2:].zfill(16) # encode filename size as 16 bit binary
         filesize = os.path.getsize(filename)
         filesize = bin(filesize)[2:].zfill(32) # encode filesize as 32 bit binary
-        client.send(bytes(size,"utf8"))
-        client.send(bytes(filename,"utf8"))
-        client.send(bytes(filesize,"utf8"))
+        client.send(bytes(size,"utf8")) # Send Filename size
+        client.send(bytes(filename,"utf8")) # Send Filename
+        client.send(bytes(filesize,"utf8")) # Send File Size
         file_to_send = open(filename, 'rb')
         l = file_to_send.read()
-        client.sendall(l)
+        client.sendall(l) # Send File Data
         file_to_send.close()
         mgmtlog.info(file + ' Sent')
         done = False
+        # Wait for transfer complete
         while done == False:
             if client.recv(BUFSIZ).decode("utf8") == 'Done':
                 done = True
             else:
-                continue
+                continue # Transfer next file
     while True:
         # Iterates through the tower_data array
         for esp in range(len(tower_data[tower])):
             # Creates a command to send to the tower
-            command = 'Tower' + str(tower+1) + ' flash ' + str(esp) + ' ' + str(files[tower_data[tower][esp][1]])
+            command = 'Tower' + str(tower+1) + ' flash ' + str(esp)
+            command += ' ' + str(files[tower_data[tower][esp][1]])
             mgmtlog.info(command)
             # Send Command to client
             client.send(bytes(command,"utf8"))
             # Waits for Pi to respond before sending next command
-            done = False
-            while done == False:
+            result = 0 # 0=Flashing 1=Success 2=Failed
+            while result == 0:
                 reply = client.recv(BUFSIZ).decode("utf8")
-                if reply == 'Done':
-                    done = True
+                mgmtlog.info(reply)
+                if "seconds (effective" in reply and result == 0:
+                    mgmtlog.info("ESP " + str(esp) + ": Success")
+                    result = 1
+                elif reply == 'Done' and result == 0:
+                    mgmtlog.info("ESP " + str(esp) + ": Failure - Check Device")
+                    result = 2
                 else:
-                    mgmtlog.info(reply)
                     continue
         client.close()
 
@@ -87,7 +93,7 @@ def import_config(configfile):
         try:
             data = yaml.load(stream)
         except yaml.YAMLError as exc:
-            print(exc)
+            mgmtlog.info(exc)
     return data
     stream.close
     mgmtlog.debug('import_config complete')
@@ -135,17 +141,21 @@ ch.setFormatter(formatter)
 mgmtlog.addHandler(fh)
 mgmtlog.addHandler(ch)
 
+#Parse Arguments
+parser = argparse.ArgumentParser()
+parser.add_argument("config", help="YAML Configuration Filename")
+args = parser.parse_args()
+
 #Import config and build array
 tower_ips = []
 tower_data = []
-config = import_config('config.yaml')
+config = import_config(args.config)
 get_tower_info()
 files = config['Files']
 
 #Server Variables
 clients = {}
 addresses = {}
-
 HOST = get_ip()
 PORT = 5000
 BUFSIZ = 1024
@@ -155,7 +165,6 @@ SERVER = socket(AF_INET, SOCK_STREAM)
 SERVER.bind(ADDR)
 
 mgmtlog.info("Chat server started on port " + str(PORT))
-
 SERVER.listen(5)
 mgmtlog.info("Waiting for connection...")
 ACCEPT_THREAD = Thread(target=accept_incoming_connections)
