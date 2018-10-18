@@ -1,6 +1,6 @@
 from socket import socket, AF_INET, SOCK_STREAM, SOCK_DGRAM
 from threading import Thread
-import yaml, select, logging, signal, time, os, re, argparse
+import yaml, select, logging, signal, time, os, re, argparse, datetime
 from collections import OrderedDict
 
 # Gets the IP of the device its running on. Mainly used for debugging
@@ -153,7 +153,7 @@ def get_tower_info():
 mgmtlog = logging.getLogger('Mgmt_Logger')
 mgmtlog.setLevel(logging.DEBUG)
 # create file handler which logs everything
-fh = logging.FileHandler('Mgmt_Server.log')
+fh = logging.FileHandler(datetime.now().strftime('Mgmt_Server_%Y%m%d_%H%M%S.log'))
 fh.setLevel(logging.DEBUG)
 # create console handler with a higher log level
 ch = logging.StreamHandler()

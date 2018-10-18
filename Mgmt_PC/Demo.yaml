@@ -1,0 +1,29 @@
+---
+Files:
+  ATOK: ATOK.bin
+  SPAM: SpamCount.bin
+Tower1:
+  IP: "192.168.0.100"
+  ESP3: SPAM
+  ESP4: SPAM
+  ESP5: SPAM
+Tower2:
+  IP: "192.168.0.102"
+  ESP3: SPAM
+  ESP4: SPAM
+  ESP5: SPAM
+Tower3:
+  IP: "192.168.0.103"
+  ESP3: SPAM
+  ESP4: SPAM
+  ESP5: SPAM
+Tower4:
+  IP: "192.168.0.104"
+  ESP3: SPAM
+  ESP4: SPAM
+  ESP5: SPAM
+Tower5:
+  IP: "192.168.0.105"
+  ESP3: SPAM
+  ESP4: SPAM
+  ESP5: SPAM
