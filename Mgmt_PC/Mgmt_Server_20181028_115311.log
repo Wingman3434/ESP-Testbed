@@ -1,0 +1,46 @@
+2018-10-28 11:53:11,305 - DEBUG - import_config Started
+2018-10-28 11:53:11,307 - DEBUG - tower IPs and data array started
+2018-10-28 11:53:11,307 - DEBUG - tower ips : ['192.168.0.101', '192.168.0.102']
+2018-10-28 11:53:11,307 - DEBUG - tower data : [[['ESP10', 'DHAP']], [['ESP6', 'DHAP'], ['ESP11', 'DHAP']]]
+2018-10-28 11:53:11,307 - DEBUG - get_ip() Started
+2018-10-28 11:53:11,308 - INFO - Chat server started on port 5000
+2018-10-28 11:53:11,309 - INFO - Waiting for connection...
+2018-10-28 11:53:11,309 - DEBUG - accept_incoming_connections() Started
+2018-10-28 11:53:39,256 - INFO - 192.168.0.101:57402 has connected.
+2018-10-28 11:53:39,258 - DEBUG - handle_client(client) Started
+2018-10-28 11:53:39,259 - DEBUG - accept_incoming_connections() Started
+2018-10-28 11:53:39,262 - INFO - ATOK Sent
+2018-10-28 11:53:39,317 - INFO - SPAM Sent
+2018-10-28 11:53:39,340 - INFO - DHAP Sent
+2018-10-28 11:53:39,363 - INFO - Tower1 flash 0 Base_rand_delay.bin
+2018-10-28 11:53:41,750 - INFO - esptool.py v2.5.1
+2018-10-28 11:53:41,791 - INFO - Serial port /dev/serial0
+2018-10-28 11:53:42,071 - INFO - Connecting....
+2018-10-28 11:53:43,110 - INFO - Detecting chip type... ESP8266
+2018-10-28 11:53:43,151 - INFO - Chip is ESP8266EXFeatures: WiFiMAC: b4:e6:2d:23:a9:c4Uploading stub...Running stub...Stub running...Configuring flash size...Auto-detected Flash size: 1MBFlash params set to 0x0020Compressed 260432 bytes to 189430...
+2018-10-28 11:53:51,564 - INFO - 192.168.0.102:43100 has connected.
+2018-10-28 11:53:51,564 - DEBUG - handle_client(client) Started
+2018-10-28 11:53:51,564 - DEBUG - accept_incoming_connections() Started
+2018-10-28 11:53:51,567 - INFO - ATOK Sent
+2018-10-28 11:53:51,615 - INFO - SPAM Sent
+2018-10-28 11:53:51,637 - INFO - DHAP Sent
+2018-10-28 11:53:51,660 - INFO - Tower2 flash 0 Base_rand_delay.bin
+2018-10-28 11:53:54,070 - INFO - esptool.py v2.5.1
+2018-10-28 11:53:54,110 - INFO - Serial port /dev/serial0
+2018-10-28 11:53:54,389 - INFO - Connecting....
+2018-10-28 11:53:55,453 - INFO - Detecting chip type... ESP8266
+2018-10-28 11:53:55,494 - INFO - Chip is ESP8266EXFeatures: WiFiMAC: b4:e6:2d:23:af:08Uploading stub...Running stub...Stub running...Configuring flash size...Auto-detected Flash size: 1MBFlash params set to 0x0020Compressed 260432 bytes to 189430...
+2018-10-28 11:54:10,452 - INFO - Writing at 0x00000000... (8 %)Writing at 0x00004000... (16 %)Writing at 0x00008000... (25 %)Writing at 0x0000c000... (33 %)Writing at 0x00010000... (41 %)Writing at 0x00014000... (50 %)Writing at 0x00018000... (58 %)Writing at 0x0001c000... (66 %)Writing at 0x00020000... (75 %)Writing at 0x00024000... (83 %)Writing at 0x00028000... (91 %)Writing at 0x0002c000... (100 %)Wrote 260432 bytes (189430 compressed) at 0x00000000 in 298.1 seconds (effective 7.0 kbit/s)...
+2018-10-28 11:54:10,494 - INFO - Hash of data verified.Leaving...Hard resetting via RTS pin...
+2018-10-28 11:54:11,168 - INFO - Writing at 0x00000000... (8 %)Writing at 0x00004000... (16 %)Writing at 0x00008000... (25 %)Writing at 0x0000c000... (33 %)Writing at 0x00010000... (41 %)Writing at 0x00014000... (50 %)Writing at 0x00018000... (58 %)Writing at 0x0001c000... (66 %)Writing at 0x00020000... (75 %)
+2018-10-28 11:54:14,468 - INFO - Done
+2018-10-28 11:54:15,176 - INFO - Done
+2018-10-28 11:54:15,182 - INFO - Tower2 flash 1 Base_rand_delay.bin
+2018-10-28 11:54:17,527 - INFO - esptool.py v2.5.1
+2018-10-28 11:54:17,569 - INFO - Serial port /dev/serial0
+2018-10-28 11:54:17,841 - INFO - Connecting....
+2018-10-28 11:54:18,882 - INFO - Detecting chip type... ESP8266
+2018-10-28 11:54:18,923 - INFO - Chip is ESP8266EXFeatures: WiFiMAC: b4:e6:2d:23:ac:09Uploading stub...Running stub...Stub running...Configuring flash size...Auto-detected Flash size: 1MBFlash params set to 0x0020Compressed 260432 bytes to 189430...
+2018-10-28 11:54:44,575 - INFO - Writing at 0x00000000... (8 %)Writing at 0x00004000... (16 %)Writing at 0x00008000... (25 %)Writing at 0x0000c000... (33 %)Writing at 0x00010000... (41 %)Writing at 0x00014000... (50 %)Writing at 0x00018000... (58 %)Writing at 0x0001c000... (66 %)Writing at 0x00020000... (75 %)Writing at 0x00024000... (83 %)Writing at 0x00028000... (91 %)Writing at 0x0002c000... (100 %)Wrote 260432 bytes (189430 compressed) at 0x00000000 in 23.3 seconds (effective 89.5 kbit/s)...
+2018-10-28 11:54:44,615 - INFO - Hash of data verified.Leaving...Hard resetting via RTS pin...
+2018-10-28 11:54:48,595 - INFO - Done

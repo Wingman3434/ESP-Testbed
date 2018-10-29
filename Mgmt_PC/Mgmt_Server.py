@@ -1,7 +1,8 @@
 from socket import socket, AF_INET, SOCK_STREAM, SOCK_DGRAM
 from threading import Thread
-import yaml, select, logging, signal, time, os, re, argparse, datetime
+import yaml, select, logging, signal, time, os, re, argparse
 from collections import OrderedDict
+from datetime import datetime
 
 # Gets the IP of the device its running on. Mainly used for debugging
 def get_ip():
@@ -39,7 +40,7 @@ def handle_client(client):  # Takes client socket as argument.
             continue
     else:
         completed_towers.append(name)
-        logname = name + '.log'
+        logname = name + datetime.now().strftime('_%Y%m%d_%H%M%S.log')
         tower=int(re.search(r'\d+', name).group())-1 # Gives us Tower Index Number
         clients[client] = name # Add client to clients list
         # Transfer files listed in the configuration YAML
